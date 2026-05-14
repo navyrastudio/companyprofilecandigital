@@ -1,26 +1,509 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #004258;
+  --primary-light: #005a75;
+  --primary-dark: #002d3d;
+  --accent: #ff7a59;
+  --accent-light: #ff9478;
+  --bg-white: #ffffff;
+  --bg-light: #f4f8fb;
+  --bg-light2: #eef4f8;
+  --text-dark: #1a2e3b;
+  --text-body: #4a5568;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --shadow-sm: 0 2px 8px rgba(0, 66, 88, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 66, 88, 0.12);
+  --shadow-lg: 0 16px 48px rgba(0, 66, 88, 0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-white);
+  color: var(--text-body);
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 88px 0;
+}
+
+.section-bg-light {
+  background: var(--bg-light);
+}
+
+/* =====================
+   SECTION HEADER
+===================== */
+.section-label {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--text-body);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-accent:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 122, 89, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+}
+.btn-white:hover {
+  background: var(--bg-light);
+  transform: translateY(-2px);
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: rgba(0, 66, 88, 0.15);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.nav-logo-text {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.nav-logo-text span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  color: var(--text-body);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background: var(--bg-light);
+}
+
+/* =====================
+   TAGS / BADGES
+===================== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--bg-light2);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* =====================
+   DIVIDER
+===================== */
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* =====================
+   FAQ
+===================== */
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.faq-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+.faq-item.open {
+  border-color: rgba(0, 66, 88, 0.25);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.faq-question:hover { color: var(--primary); }
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.faq-item.open .faq-icon {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.7;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-answer.open {
+  max-height: 240px;
+  padding-bottom: 20px;
+}
+
+/* =====================
+   TESTIMONIALS
+===================== */
+.testimonial-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  width: 320px;
+}
+
+/* =====================
+   MARQUEE
+===================== */
+.marquee-wrap {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* =====================
+   PROCESS STEPS
+===================== */
+.step-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* =====================
+   STATS
+===================== */
+.stat-num {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+/* =====================
+   ICON BOX
+===================== */
+.icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: var(--bg-light);
+}
+
+/* =====================
+   PRICING
+===================== */
+.pricing-card {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.pricing-card.featured {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+/* =====================
+   PORTFOLIO
+===================== */
+.portfolio-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+.portfolio-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* =====================
+   REVEAL ANIMATIONS
+===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* =====================
+   FLOAT ANIMATION
+===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float { animation: float 3s ease-in-out infinite; }
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: flex !important; }
+  .two-col { grid-template-columns: 1fr !important; }
+  .hide-mobile { display: none !important; }
 }
