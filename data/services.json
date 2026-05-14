@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "FaDesktop",
+    "title": "Landing Page",
+    "desc": "Halaman yang dirancang khusus untuk mengkonversi pengunjung menjadi pelanggan. Desain modern, loading cepat, dan call-to-action yang kuat.",
+    "points": ["Custom Design", "Mobile Responsive", "SEO Friendly"],
+    "color": "#3b82f6",
+    "bg": "#eff6ff"
+  },
+  {
+    "icon": "FaBuilding",
+    "title": "Company Profile",
+    "desc": "Wajah digital perusahaan Anda yang memancarkan profesionalisme. Bangun kepercayaan dan kredibilitas bisnis Anda secara online.",
+    "points": ["Multi-halaman", "CMS Terintegrasi", "Domain & Hosting"],
+    "color": "#004258",
+    "bg": "#f0f9ff"
+  },
+  {
+    "icon": "FaShoppingCart",
+    "title": "Toko Online / E-Commerce",
+    "desc": "Buka toko online lengkap dengan sistem pembayaran, manajemen produk, dan pengalaman belanja yang nyaman untuk pelanggan.",
+    "points": ["Payment Gateway", "Manajemen Produk", "Dashboard Admin"],
+    "color": "#10b981",
+    "bg": "#f0fdf4"
+  },
+  {
+    "icon": "FaCode",
+    "title": "Custom Web App",
+    "desc": "Solusi web berbasis kebutuhan spesifik bisnis Anda. Kami bangun sistem dari nol sesuai alur kerja perusahaan.",
+    "points": ["Fitur Custom", "Skalabel", "API Integration"],
+    "color": "#8b5cf6",
+    "bg": "#faf5ff"
+  },
+  {
+    "icon": "FaSyncAlt",
+    "title": "Redesain Website",
+    "desc": "Website lama kurang menarik? Kami transformasi tampilan dan performa website Anda tanpa kehilangan peringkat Google.",
+    "points": ["Audit Website", "UI/UX Upgrade", "Speed Optimization"],
+    "color": "#f59e0b",
+    "bg": "#fffbeb"
+  },
+  {
+    "icon": "FaShieldAlt",
+    "title": "Maintenance & Support",
+    "desc": "Pastikan website selalu berjalan optimal dengan layanan maintenance, update konten, dan technical support berkelanjutan.",
+    "points": ["Update Konten", "Backup Rutin", "24/7 Monitoring"],
+    "color": "#ef4444",
+    "bg": "#fff5f5"
+  }
+]

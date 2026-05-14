@@ -1,11 +1,4 @@
-const portfolios = [
-  { name: "PT Maju Bersama", type: "Company Profile", industry: "Konstruksi", color: "#004258" },
-  { name: "Toko Fashion Kita", type: "E-Commerce", industry: "Fashion & Retail", color: "#8b5cf6" },
-  { name: "Klinik Sehat Prima", type: "Landing Page", industry: "Kesehatan", color: "#10b981" },
-  { name: "Properti Nusantara", type: "Company Profile", industry: "Properti", color: "#f59e0b" },
-  { name: "RoboTech Indonesia", type: "Custom Web App", industry: "Teknologi", color: "#3b82f6" },
-  { name: "Edu Pintar Online", type: "E-Commerce", industry: "Pendidikan", color: "#ef4444" },
-];
+import portfolios from "../../data/portfolio.json";
 
 export default function PortfolioSection() {
   return (
