@@ -9,18 +9,41 @@ export default function HeroSection() {
         position: "relative",
       }}
     >
-      <div className="container">
+      {/* Decorative Background Elements */}
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, overflow: "hidden", pointerEvents: "none", zIndex: 1 }}>
+        {/* Subtle fading grid pattern */}
+        <div 
+          style={{ 
+            position: "absolute", 
+            top: 0, left: 0, right: 0, bottom: 0, 
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", 
+            backgroundSize: "40px 40px",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)"
+          }} 
+        />
+
+        {/* Elegant Soft Glows */}
+        <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        <div style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 122, 89, 0.12) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        
+        {/* Soft diagonal light ray */}
+        <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 10 }}>
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "60px",
-            alignItems: "flex-end",
+            alignItems: "center",
+            paddingBottom: "100px",
           }}
           className="two-col"
         >
           {/* Left */}
-          <div style={{ paddingBottom: "80px" }} className="reveal-left">
+          <div className="reveal-left">
             <div
               style={{
                 display: "inline-flex",
@@ -105,10 +128,10 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right — browser mockup sitting at bottom */}
+          {/* Right — browser mockup */}
           <div
             className="reveal-right hide-mobile"
-            style={{ display: "flex", alignItems: "flex-end", justifyContent: "center" }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-80px" }}
           >
             <div
               className="float"
@@ -116,9 +139,9 @@ export default function HeroSection() {
                 width: "100%",
                 maxWidth: "440px",
                 background: "#fff",
-                borderRadius: "16px 16px 0 0",
+                borderRadius: "16px",
                 overflow: "hidden",
-                boxShadow: "0 -8px 40px rgba(0,0,0,0.25)",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
               }}
             >
               {/* Browser bar */}
@@ -189,7 +212,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom wave */}
-      <div style={{ marginTop: "-1px", lineHeight: 0 }}>
+      <div style={{ position: "relative", zIndex: 10, marginTop: "-1px", lineHeight: 0 }}>
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block", width: "100%" }}>
           <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 28C840 36 960 42 1080 40C1200 38 1320 28 1380 23L1440 18V60H0Z" fill="#f4f8fb" />
           <path d="M0 60L60 55C120 50 240 40 360 36C480 32 600 38 720 44C840 50 960 54 1080 52C1200 50 1320 42 1380 38L1440 34V60H0Z" fill="white" />
@@ -197,6 +220,20 @@ export default function HeroSection() {
       </div>
 
       <style>{`
+        @keyframes heroFloat {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
+        }
+        @keyframes heroFloatAlt {
+          0% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-10px) scale(1.1); }
+          100% { transform: translateY(0px) scale(1); }
+        }
+        .hero-float-1 { animation: heroFloat 6s ease-in-out infinite; }
+        .hero-float-2 { animation: heroFloatAlt 8s ease-in-out infinite reverse; }
+        .hero-float-3 { animation: heroFloat 7s ease-in-out infinite 2s; }
+
         @media (max-width: 900px) {
           #hero .two-col { grid-template-columns: 1fr !important; }
           #hero .two-col > div:last-child { display: none !important; }
