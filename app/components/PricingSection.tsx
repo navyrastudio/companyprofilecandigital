@@ -1,62 +1,6 @@
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-const plans = [
-  {
-    name: "Starter",
-    tagline: "Untuk UMKM & Bisnis Baru",
-    price: "3,5",
-    suffix: "juta",
-    features: [
-      "Landing Page (1 halaman)",
-      "Desain Custom",
-      "Mobile Responsive",
-      "Domain .com 1 tahun",
-      "Hosting 1 tahun",
-      "Gratis Revisi 3x",
-    ],
-    notIncluded: ["CMS / Halaman tambahan", "SEO Optimization"],
-    cta: "Pilih Paket Ini",
-    featured: false,
-  },
-  {
-    name: "Professional",
-    tagline: "Paling Populer",
-    price: "7,5",
-    suffix: "juta",
-    features: [
-      "Company Profile (5-8 halaman)",
-      "Desain Custom Premium",
-      "Mobile & Tablet Responsive",
-      "Domain + Hosting 1 tahun",
-      "CMS WordPress",
-      "SEO On-Page",
-      "Gratis Revisi 5x",
-      "Support 3 bulan",
-    ],
-    notIncluded: [],
-    cta: "Pilih Paket Ini",
-    featured: true,
-  },
-  {
-    name: "Enterprise",
-    tagline: "Untuk Kebutuhan Besar",
-    price: "Custom",
-    suffix: "",
-    features: [
-      "Halaman tidak terbatas",
-      "E-Commerce / Custom App",
-      "Desain UI/UX Premium",
-      "Payment Gateway",
-      "Admin Dashboard",
-      "API Integration",
-      "SEO Full Optimization",
-      "Support 12 bulan",
-    ],
-    notIncluded: [],
-    cta: "Konsultasi Dulu",
-    featured: false,
-  },
-];
+import plans from "../../data/pricing.json";
 
 export default function PricingSection() {
   return (
