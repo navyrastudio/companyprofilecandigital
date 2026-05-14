@@ -15,12 +15,13 @@ export default function HeroSection() {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "60px",
-            alignItems: "flex-end",
+            alignItems: "center",
+            paddingBottom: "100px",
           }}
           className="two-col"
         >
           {/* Left */}
-          <div style={{ paddingBottom: "80px" }} className="reveal-left">
+          <div className="reveal-left">
             <div
               style={{
                 display: "inline-flex",
@@ -105,10 +106,10 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right — browser mockup sitting at bottom */}
+          {/* Right — browser mockup */}
           <div
             className="reveal-right hide-mobile"
-            style={{ display: "flex", alignItems: "flex-end", justifyContent: "center" }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-80px" }}
           >
             <div
               className="float"
@@ -116,9 +117,9 @@ export default function HeroSection() {
                 width: "100%",
                 maxWidth: "440px",
                 background: "#fff",
-                borderRadius: "16px 16px 0 0",
+                borderRadius: "16px",
                 overflow: "hidden",
-                boxShadow: "0 -8px 40px rgba(0,0,0,0.25)",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
               }}
             >
               {/* Browser bar */}
