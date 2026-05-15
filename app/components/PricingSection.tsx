@@ -73,6 +73,7 @@ export default function PricingSection() {
         </div>
 
         <div
+          className="pricing-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",

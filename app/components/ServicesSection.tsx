@@ -74,6 +74,7 @@ export default function ServicesSection() {
         </div>
 
         <div
+          className="services-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))",

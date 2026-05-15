@@ -22,6 +22,7 @@ export default function PortfolioSection() {
         </div>
 
         <div
+          className="portfolio-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",

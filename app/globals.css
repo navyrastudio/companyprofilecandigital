@@ -75,6 +75,13 @@ h6 {
   padding: 0 24px;
 }
 
+/* Tablet container padding */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
 section {
   padding: 88px 0;
 }
@@ -630,6 +637,131 @@ section {
   }
 }
 
+/* =====================
+   TABLET RESPONSIVE (769px – 1024px)
+===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Layout & spacing */
+  section {
+    padding: 72px 0;
+  }
+
+  .section-header {
+    margin-bottom: 44px;
+  }
+
+  /* Navbar — show hamburger on tablet too */
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Why Us — reduce gap, keep 2 cols only on wider tablets */
+  .why-us-grid {
+    gap: 40px;
+  }
+
+  /* Two-col grids — stack on tablet */
+  .two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero two-col: stack */
+  #hero .two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hide hero browser mockup on tablet */
+  #hero .two-col > div:last-child {
+    display: none !important;
+  }
+
+  /* Hero — center all content on tablet */
+  #hero .two-col > div:first-child {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Center the badge pill */
+  #hero .two-col > div:first-child > div:first-child {
+    align-self: center;
+  }
+
+  /* Center h1 */
+  #hero .two-col > div:first-child h1 {
+    text-align: center;
+  }
+
+  /* Center description paragraph */
+  #hero .two-col > div:first-child > p {
+    text-align: center;
+    max-width: 560px;
+  }
+
+  /* Center CTA buttons row */
+  #hero .two-col > div:first-child > div:has(.btn) {
+    justify-content: center;
+  }
+
+  /* Center stats row */
+  #hero .two-col > div:first-child > div:last-child {
+    justify-content: center;
+  }
+
+  /* Services grid — 2 columns on tablet */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Portfolio grid — 2 columns on tablet */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Process steps — keep 2 columns (override the .two-col: 1fr rule) */
+  #process .two-col {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Pricing grid — single column, centered on tablet */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  /* Footer grid */
+  footer .two-col {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px;
+  }
+
+  footer .two-col > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* WhyUs section — on tablet ≤ 900px stack */
+  .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
 @media (max-width: 576px) {
   .stats-grid {
     gap: 8px;
@@ -659,11 +791,15 @@ section {
 }
 
 /* =====================
-   RESPONSIVE
+   RESPONSIVE — Mobile (≤ 768px)
 ===================== */
 @media (max-width: 768px) {
   section {
-    padding: 64px 0;
+    padding: 56px 0;
+  }
+
+  .container {
+    padding: 0 16px;
   }
 
   .nav-links {
@@ -680,10 +816,70 @@ section {
   }
 
   .why-us-grid {
-    gap: 40px;
+    gap: 32px;
   }
 
   .hide-mobile {
     display: none !important;
+  }
+
+  /* Hero — center all content on mobile */
+  #hero .two-col > div:first-child {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #hero .two-col > div:first-child h1,
+  #hero .two-col > div:first-child > p {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  #hero .two-col > div:first-child > div:has(.btn),
+  #hero .two-col > div:first-child > div:last-child {
+    justify-content: center;
+  }
+
+  /* Services & Portfolio — single column on mobile */
+  .services-grid,
+  .portfolio-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+  }
+
+  /* Stats — 2×2 on mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Footer — single column on mobile */
+  footer .two-col {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  footer .two-col > div:first-child {
+    grid-column: auto;
+  }
+
+  /* Section header tighter */
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  /* Section desc — remove max-width constraint on mobile */
+  .section-desc {
+    font-size: 15px;
+  }
+
+  /* CTA trust items */
+  #contact .container > div > div:last-child {
+    gap: 20px;
   }
 }
