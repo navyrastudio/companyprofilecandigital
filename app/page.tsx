@@ -43,7 +43,7 @@ export default function Home() {
             overflow: "hidden",
           }}
         >
-          <div
+          {/* <div
             style={{
               display: "flex",
               width: "max-content",
@@ -86,7 +86,7 @@ export default function Home() {
                 {item}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <WhyUsSection />
