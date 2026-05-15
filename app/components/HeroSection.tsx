@@ -4,7 +4,7 @@ export default function HeroSection() {
       id="hero"
       style={{
         background: "linear-gradient(135deg, #004258 0%, #005a75 100%)",
-        padding: "40px 0 0",
+        padding: "110px 0 0",
         position: "relative",
       }}
     >
