@@ -75,6 +75,13 @@ h6 {
   padding: 0 24px;
 }
 
+/* Tablet container padding */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
 section {
   padding: 88px 0;
 }
@@ -210,7 +217,6 @@ section {
   width: 100%;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
-  /* Solid when scrolled */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -624,31 +630,117 @@ section {
   text-align: center;
 }
 
+/* =====================
+   BREAKPOINTS
+===================== */
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 991px) {
   .stats-grid {
     gap: 20px;
   }
 }
 
-/* Stat label line break pada layar sangat kecil */
-@media (max-width: 400px) {
-  .stat-label-line {
-    display: block;
+/* Tablet Layouts (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section {
+    padding: 72px 0;
   }
-  .stat-label-line:not(:last-child)::after {
-    content: none;
+
+  .section-header {
+    margin-bottom: 44px;
   }
-  .stat-num {
-    font-size: clamp(20px, 5.5vw, 28px);
+
+  .nav-links {
+    display: none;
   }
-  .stat-label {
-    font-size: 11px;
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  .why-us-grid {
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  #hero .two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  #hero .two-col>div:last-child {
+    display: none !important;
+  }
+
+  #hero .two-col>div:first-child {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  #hero .two-col>div:first-child>div:first-child {
+    align-self: center;
+  }
+
+  #hero .two-col>div:first-child h1 {
+    text-align: center;
+  }
+
+  #hero .two-col>div:first-child>p {
+    text-align: center;
+    max-width: 560px;
+  }
+
+  #hero .two-col>div:first-child>div:has(.btn) {
+    justify-content: center;
+  }
+
+  #hero .two-col>div:first-child>div:last-child {
+    justify-content: center;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #process .two-col {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  footer .two-col {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px;
+  }
+
+  footer .two-col>div:first-child {
+    grid-column: 1 / -1;
   }
 }
 
-/* =====================
-   RESPONSIVE — Mobile (≤ 768px)
-===================== */
+/* Mobile (≤ 768px) */
 @media (max-width: 768px) {
   section {
     padding: 56px 0;
@@ -675,41 +767,64 @@ section {
     gap: 28px;
   }
 
-  /* WhyUs section — jarak atas lebih kecil di mobile */
-  .whyus-section {
-    padding-top: 24px !important;
-    padding-bottom: 56px !important;
-  }
+  /* Diambil dari branch why-us-ui */
 
   .hide-mobile {
     display: none !important;
   }
 
-  /* =====================
-     WHYUS — Perbesar konten di mobile
-  ===================== */
+  /* Hero Section Center Mobile */
+  #hero .two-col>div:first-child {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 
-  /* Section label */
+  #hero .two-col>div:first-child h1,
+  #hero .two-col>div:first-child>p {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  #hero .two-col>div:first-child>div:has(.btn),
+  #hero .two-col>div:first-child>div:last-child {
+    justify-content: center;
+  }
+
+  /* Services, Portfolio, Pricing - Single Column */
+  .services-grid,
+  .portfolio-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+  }
+
+  /* WHY US SECTION SPECIFICS (Dari branch why-us-ui) */
+  .whyus-section {
+    padding-top: 24px !important;
+    padding-bottom: 56px !important;
+  }
+
   .whyus-section .section-label {
     font-size: 13px;
     margin-bottom: 10px;
   }
 
-  /* Judul utama */
   .whyus-title {
     font-size: clamp(28px, 7vw, 38px) !important;
     line-height: 1.2 !important;
     margin-bottom: 16px !important;
   }
 
-  /* Paragraf deskripsi */
   .whyus-desc {
     font-size: 16px !important;
     line-height: 1.85 !important;
     margin-bottom: 20px !important;
   }
 
-  /* Problem items (merah) */
   .whyus-problem-item {
     padding: 14px 18px !important;
     border-radius: 12px !important;
@@ -721,19 +836,16 @@ section {
     font-size: 16px !important;
   }
 
-  /* Benefit card container (kanan) */
   .whyus-benefit-card {
     padding: 28px 22px !important;
     border-radius: 18px !important;
   }
 
-  /* Judul benefit card */
   .whyus-benefit-title {
     font-size: 20px !important;
     margin-bottom: 18px !important;
   }
 
-  /* Tiap baris benefit */
   .whyus-benefit-item {
     padding: 15px 16px !important;
     margin-bottom: 10px !important;
@@ -741,22 +853,18 @@ section {
     gap: 14px !important;
   }
 
-  /* Icon benefit */
   .whyus-benefit-icon {
     width: 44px !important;
     height: 44px !important;
     border-radius: 12px !important;
   }
 
-  /* Teks benefit */
   .whyus-benefit-text {
     font-size: 16px !important;
     font-weight: 500 !important;
   }
 
-  /* =====================
-     STATS GRID — di mobile
-  ===================== */
+  /* Stats Grid (Merged from both branches) */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -790,7 +898,7 @@ section {
     content: none;
   }
 
-  /* Section header */
+  /* General Tighter Spacing */
   .section-header {
     margin-bottom: 32px;
   }
@@ -799,13 +907,56 @@ section {
     font-size: 15px;
   }
 
-  /* Footer — single column */
+  /* Contact / CTA */
+  #contact .container>div>div:last-child {
+    gap: 20px;
+  }
+
+  /* Footer */
   footer .two-col {
     grid-template-columns: 1fr !important;
     gap: 24px;
   }
 
-  footer .two-col > div:first-child {
+  footer .two-col>div:first-child {
     grid-column: auto;
+  }
+}
+
+/* Small Mobile (≤ 576px) */
+@media (max-width: 576px) {
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stat-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin: 0 auto 8px;
+  }
+
+  .stat-icon {
+    font-size: 14px;
+  }
+
+  .stat-num {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+}
+
+/* Extra Small Mobile (≤ 400px) */
+@media (max-width: 400px) {
+  .stat-label-line {
+    display: block;
+  }
+
+  .stat-label-line:not(:last-child)::after {
+    content: none;
   }
 }
