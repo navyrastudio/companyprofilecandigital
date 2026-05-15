@@ -630,40 +630,32 @@ section {
   }
 }
 
-@media (max-width: 576px) {
-  .stats-grid {
-    gap: 8px;
-  }
-  .stat-icon-wrap {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    margin: 0 auto 8px;
-  }
-  .stat-icon {
-    font-size: 14px;
-  }
-  .stat-num {
-    font-size: 16px;
-  }
-  .stat-label {
-    font-size: 10px;
-    margin-top: 2px;
-  }
+/* Stat label line break pada layar sangat kecil */
+@media (max-width: 400px) {
   .stat-label-line {
     display: block;
   }
   .stat-label-line:not(:last-child)::after {
     content: none;
   }
+  .stat-num {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+  .stat-label {
+    font-size: 11px;
+  }
 }
 
 /* =====================
-   RESPONSIVE
+   RESPONSIVE — Mobile (≤ 768px)
 ===================== */
 @media (max-width: 768px) {
   section {
-    padding: 64px 0;
+    padding: 56px 0;
+  }
+
+  .container {
+    padding: 0 16px;
   }
 
   .nav-links {
@@ -680,10 +672,140 @@ section {
   }
 
   .why-us-grid {
-    gap: 40px;
+    gap: 28px;
+  }
+
+  /* WhyUs section — jarak atas lebih kecil di mobile */
+  .whyus-section {
+    padding-top: 24px !important;
+    padding-bottom: 56px !important;
   }
 
   .hide-mobile {
     display: none !important;
+  }
+
+  /* =====================
+     WHYUS — Perbesar konten di mobile
+  ===================== */
+
+  /* Section label */
+  .whyus-section .section-label {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  /* Judul utama */
+  .whyus-title {
+    font-size: clamp(28px, 7vw, 38px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Paragraf deskripsi */
+  .whyus-desc {
+    font-size: 16px !important;
+    line-height: 1.85 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Problem items (merah) */
+  .whyus-problem-item {
+    padding: 14px 18px !important;
+    border-radius: 12px !important;
+    margin-bottom: 10px !important;
+    gap: 12px !important;
+  }
+
+  .whyus-problem-text {
+    font-size: 16px !important;
+  }
+
+  /* Benefit card container (kanan) */
+  .whyus-benefit-card {
+    padding: 28px 22px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Judul benefit card */
+  .whyus-benefit-title {
+    font-size: 20px !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* Tiap baris benefit */
+  .whyus-benefit-item {
+    padding: 15px 16px !important;
+    margin-bottom: 10px !important;
+    border-radius: 12px !important;
+    gap: 14px !important;
+  }
+
+  /* Icon benefit */
+  .whyus-benefit-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Teks benefit */
+  .whyus-benefit-text {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  /* =====================
+     STATS GRID — di mobile
+  ===================== */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    margin: 0 auto 10px;
+  }
+
+  .stat-icon {
+    font-size: 22px;
+  }
+
+  .stat-num {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .stat-label-line {
+    display: block;
+  }
+
+  .stat-label-line:not(:last-child)::after {
+    content: none;
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+  }
+
+  /* Footer — single column */
+  footer .two-col {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  footer .two-col > div:first-child {
+    grid-column: auto;
   }
 }
