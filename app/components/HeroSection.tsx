@@ -279,6 +279,31 @@ export default function HeroSection() {
         @media (max-width: 900px) {
           #hero .two-col { grid-template-columns: 1fr !important; }
           #hero .two-col > div:last-child { display: none !important; }
+
+          /* Center all left-column content */
+          #hero .two-col > div:first-child {
+            text-align: center !important;
+            align-items: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            max-width: 680px !important;
+            margin: 0 auto !important;
+          }
+          #hero .two-col > div:first-child h1 {
+            text-align: center !important;
+          }
+          #hero .two-col > div:first-child > p {
+            text-align: center !important;
+            max-width: 560px !important;
+          }
+          /* Buttons row */
+          #hero .two-col > div:first-child > div:nth-child(4) {
+            justify-content: center !important;
+          }
+          /* Stats row */
+          #hero .two-col > div:first-child > div:nth-child(5) {
+            justify-content: center !important;
+          }
         }
       `}</style>
     </section>
