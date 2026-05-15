@@ -1,60 +1,62 @@
 [
   {
-    "name": "Starter",
-    "tagline": "Untuk UMKM & Bisnis Baru",
-    "price": "3,5",
-    "suffix": "juta",
+    "name": "Landing Page",
+    "tagline": "PALING PRAKTIS",
+    "price": "600",
+    "suffix": "rb",
+    "subtitle": "Solusi cepat untuk promosi produk atau jasa tunggal.",
     "features": [
-      "Landing Page (1 halaman)",
-      "Desain Custom",
-      "Mobile Responsive",
-      "Domain .com 1 tahun",
-      "Hosting 1 tahun",
-      "Gratis Revisi 3x"
-    ],
-    "notIncluded": [
-      "CMS / Halaman tambahan",
-      "SEO Optimization"
-    ],
-    "cta": "Pilih Paket Ini",
-    "featured": false
-  },
-  {
-    "name": "Professional",
-    "tagline": "Paling Populer",
-    "price": "7,5",
-    "suffix": "juta",
-    "features": [
-      "Company Profile (5-8 halaman)",
-      "Desain Custom Premium",
-      "Mobile & Tablet Responsive",
-      "Domain + Hosting 1 tahun",
-      "CMS WordPress",
-      "SEO On-Page",
-      "Gratis Revisi 5x",
-      "Support 3 bulan"
+      "1 Halaman Desain Modern",
+      "Mobile Responsive High-Speed",
+      "Integrasi WhatsApp Chat",
+      "Free Domain & Hosting (1st Year)",
+      "Basic SEO Optimization",
+      "3x Revisi Desain"
     ],
     "notIncluded": [],
-    "cta": "Pilih Paket Ini",
-    "featured": true
+    "duration": "3-5 hari kerja",
+    "cta": "Mulai Konsultasi",
+    "featured": false,
+    "bestChoice": false
   },
   {
-    "name": "Enterprise",
-    "tagline": "Untuk Kebutuhan Besar",
-    "price": "Custom",
-    "suffix": "",
+    "name": "Company Profile",
+    "tagline": "PALING POPULER",
+    "price": "2.5",
+    "suffix": "jt",
+    "subtitle": "Branding profesional untuk perusahaan & instansi.",
     "features": [
-      "Halaman tidak terbatas",
-      "E-Commerce / Custom App",
-      "Desain UI/UX Premium",
-      "Payment Gateway",
-      "Admin Dashboard",
-      "API Integration",
-      "SEO Full Optimization",
-      "Support 12 bulan"
+      "Max 7 Halaman Custom",
+      "Desain Premium & Eksklusif",
+      "Full Responsive across devices",
+      "Domain + Hosting High Specs",
+      "Google Analytics & SEO Setup",
+      "5x Revisi Desain"
     ],
     "notIncluded": [],
-    "cta": "Konsultasi Dulu",
-    "featured": false
+    "duration": "7-10 hari kerja",
+    "cta": "Mulai Konsultasi",
+    "featured": true,
+    "bestChoice": true
+  },
+  {
+    "name": "Sistem Toko Online",
+    "tagline": "PALING LENGKAP",
+    "price": "4.5",
+    "suffix": "jt",
+    "subtitle": "Platform jualan online dengan manajemen mandiri.",
+    "features": [
+      "Katalog Produk & Keranjang",
+      "Order WA / Payment Gateway",
+      "Dashboard Admin & Inventori",
+      "Mobile Shop Responsive",
+      "Free Pelatihan Admin",
+      "Support Teknis 1 Bulan"
+    ],
+    "notIncluded": [],
+    "duration": "10-14 hari kerja",
+    "cta": "Mulai Konsultasi",
+    "featured": false,
+    "bestChoice": false
   }
 ]
