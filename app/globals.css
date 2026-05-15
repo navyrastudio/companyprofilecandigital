@@ -217,7 +217,6 @@ section {
   width: 100%;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
-  /* Solid when scrolled */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -631,18 +630,19 @@ section {
   text-align: center;
 }
 
+/* =====================
+   BREAKPOINTS
+===================== */
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 991px) {
   .stats-grid {
     gap: 20px;
   }
 }
 
-/* =====================
-   TABLET RESPONSIVE (769px – 1024px)
-===================== */
+/* Tablet Layouts (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-
-  /* Layout & spacing */
   section {
     padding: 72px 0;
   }
@@ -651,7 +651,6 @@ section {
     margin-bottom: 44px;
   }
 
-  /* Navbar — show hamburger on tablet too */
   .nav-links {
     display: none;
   }
@@ -660,28 +659,24 @@ section {
     display: flex !important;
   }
 
-  /* Why Us — reduce gap, keep 2 cols only on wider tablets */
   .why-us-grid {
     gap: 40px;
+    grid-template-columns: 1fr;
   }
 
-  /* Two-col grids — stack on tablet */
   .two-col {
     grid-template-columns: 1fr !important;
   }
 
-  /* Hero two-col: stack */
   #hero .two-col {
     grid-template-columns: 1fr !important;
   }
 
-  /* Hide hero browser mockup on tablet */
-  #hero .two-col > div:last-child {
+  #hero .two-col>div:last-child {
     display: none !important;
   }
 
-  /* Hero — center all content on tablet */
-  #hero .two-col > div:first-child {
+  #hero .two-col>div:first-child {
     text-align: center;
     align-items: center;
     display: flex;
@@ -690,48 +685,39 @@ section {
     margin: 0 auto;
   }
 
-  /* Center the badge pill */
-  #hero .two-col > div:first-child > div:first-child {
+  #hero .two-col>div:first-child>div:first-child {
     align-self: center;
   }
 
-  /* Center h1 */
-  #hero .two-col > div:first-child h1 {
+  #hero .two-col>div:first-child h1 {
     text-align: center;
   }
 
-  /* Center description paragraph */
-  #hero .two-col > div:first-child > p {
+  #hero .two-col>div:first-child>p {
     text-align: center;
     max-width: 560px;
   }
 
-  /* Center CTA buttons row */
-  #hero .two-col > div:first-child > div:has(.btn) {
+  #hero .two-col>div:first-child>div:has(.btn) {
     justify-content: center;
   }
 
-  /* Center stats row */
-  #hero .two-col > div:first-child > div:last-child {
+  #hero .two-col>div:first-child>div:last-child {
     justify-content: center;
   }
 
-  /* Services grid — 2 columns on tablet */
   .services-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* Portfolio grid — 2 columns on tablet */
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* Process steps — keep 2 columns (override the .two-col: 1fr rule) */
   #process .two-col {
     grid-template-columns: 1fr 1fr !important;
   }
 
-  /* Pricing grid — single column, centered on tablet */
   .pricing-grid {
     grid-template-columns: 1fr !important;
     max-width: 480px;
@@ -739,60 +725,22 @@ section {
     margin-right: auto;
   }
 
-  /* Stats grid */
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
 
-  /* Footer grid */
   footer .two-col {
     grid-template-columns: 1fr 1fr !important;
     gap: 32px;
   }
 
-  footer .two-col > div:first-child {
+  footer .two-col>div:first-child {
     grid-column: 1 / -1;
   }
-
-  /* WhyUs section — on tablet ≤ 900px stack */
-  .why-us-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
 }
 
-@media (max-width: 576px) {
-  .stats-grid {
-    gap: 8px;
-  }
-  .stat-icon-wrap {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    margin: 0 auto 8px;
-  }
-  .stat-icon {
-    font-size: 14px;
-  }
-  .stat-num {
-    font-size: 16px;
-  }
-  .stat-label {
-    font-size: 10px;
-    margin-top: 2px;
-  }
-  .stat-label-line {
-    display: block;
-  }
-  .stat-label-line:not(:last-child)::after {
-    content: none;
-  }
-}
-
-/* =====================
-   RESPONSIVE — Mobile (≤ 768px)
-===================== */
+/* Mobile (≤ 768px) */
 @media (max-width: 768px) {
   section {
     padding: 56px 0;
@@ -816,15 +764,17 @@ section {
   }
 
   .why-us-grid {
-    gap: 32px;
+    gap: 28px;
   }
+
+  /* Diambil dari branch why-us-ui */
 
   .hide-mobile {
     display: none !important;
   }
 
-  /* Hero — center all content on mobile */
-  #hero .two-col > div:first-child {
+  /* Hero Section Center Mobile */
+  #hero .two-col>div:first-child {
     text-align: center;
     align-items: center;
     display: flex;
@@ -833,18 +783,18 @@ section {
     margin: 0 auto;
   }
 
-  #hero .two-col > div:first-child h1,
-  #hero .two-col > div:first-child > p {
+  #hero .two-col>div:first-child h1,
+  #hero .two-col>div:first-child>p {
     text-align: center;
     max-width: 100%;
   }
 
-  #hero .two-col > div:first-child > div:has(.btn),
-  #hero .two-col > div:first-child > div:last-child {
+  #hero .two-col>div:first-child>div:has(.btn),
+  #hero .two-col>div:first-child>div:last-child {
     justify-content: center;
   }
 
-  /* Services & Portfolio — single column on mobile */
+  /* Services, Portfolio, Pricing - Single Column */
   .services-grid,
   .portfolio-grid,
   .pricing-grid {
@@ -852,34 +802,161 @@ section {
     max-width: 100%;
   }
 
-  /* Stats — 2×2 on mobile */
+  /* WHY US SECTION SPECIFICS (Dari branch why-us-ui) */
+  .whyus-section {
+    padding-top: 24px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .whyus-section .section-label {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .whyus-title {
+    font-size: clamp(28px, 7vw, 38px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .whyus-desc {
+    font-size: 16px !important;
+    line-height: 1.85 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .whyus-problem-item {
+    padding: 14px 18px !important;
+    border-radius: 12px !important;
+    margin-bottom: 10px !important;
+    gap: 12px !important;
+  }
+
+  .whyus-problem-text {
+    font-size: 16px !important;
+  }
+
+  .whyus-benefit-card {
+    padding: 28px 22px !important;
+    border-radius: 18px !important;
+  }
+
+  .whyus-benefit-title {
+    font-size: 20px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .whyus-benefit-item {
+    padding: 15px 16px !important;
+    margin-bottom: 10px !important;
+    border-radius: 12px !important;
+    gap: 14px !important;
+  }
+
+  .whyus-benefit-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+  }
+
+  .whyus-benefit-text {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Stats Grid (Merged from both branches) */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  /* Footer — single column on mobile */
+  .stat-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    margin: 0 auto 10px;
+  }
+
+  .stat-icon {
+    font-size: 22px;
+  }
+
+  .stat-num {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .stat-label-line {
+    display: block;
+  }
+
+  .stat-label-line:not(:last-child)::after {
+    content: none;
+  }
+
+  /* General Tighter Spacing */
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+  }
+
+  /* Contact / CTA */
+  #contact .container>div>div:last-child {
+    gap: 20px;
+  }
+
+  /* Footer */
   footer .two-col {
     grid-template-columns: 1fr !important;
     gap: 24px;
   }
 
-  footer .two-col > div:first-child {
+  footer .two-col>div:first-child {
     grid-column: auto;
   }
+}
 
-  /* Section header tighter */
-  .section-header {
-    margin-bottom: 32px;
+/* Small Mobile (≤ 576px) */
+@media (max-width: 576px) {
+  .stats-grid {
+    gap: 8px;
   }
 
-  /* Section desc — remove max-width constraint on mobile */
-  .section-desc {
-    font-size: 15px;
+  .stat-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin: 0 auto 8px;
   }
 
-  /* CTA trust items */
-  #contact .container > div > div:last-child {
-    gap: 20px;
+  .stat-icon {
+    font-size: 14px;
+  }
+
+  .stat-num {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+}
+
+/* Extra Small Mobile (≤ 400px) */
+@media (max-width: 400px) {
+  .stat-label-line {
+    display: block;
+  }
+
+  .stat-label-line:not(:last-child)::after {
+    content: none;
   }
 }
