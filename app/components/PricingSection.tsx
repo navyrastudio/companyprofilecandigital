@@ -24,7 +24,7 @@ export default function PricingSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
             gap: "28px",
             alignItems: "stretch",
           }}
@@ -195,12 +195,10 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div className="reveal" style={{
+        <div className="reveal custom-banner" style={{
           marginTop: "80px",
           background: "var(--primary-dark)",
           borderRadius: "24px",
-          display: "flex",
-          flexWrap: "wrap",
           boxShadow: "0 24px 48px rgba(0, 45, 61, 0.15)",
           border: "1px solid rgba(255, 255, 255, 0.1)",
           position: "relative",
@@ -235,7 +233,7 @@ export default function PricingSection() {
           </div>
 
           {/* Bagian Kiri */}
-          <div style={{ flex: "1 1 450px", padding: "56px 64px", position: "relative", zIndex: 1 }}>
+          <div className="banner-left" style={{ flex: "1 1 350px", position: "relative", zIndex: 1 }}>
             <div style={{ width: "64px", height: "64px", borderRadius: "18px", background: "linear-gradient(135deg, var(--accent), #e05e3f)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "32px", boxShadow: "0 8px 24px rgba(255, 122, 89, 0.3)" }}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
             </div>
@@ -248,7 +246,7 @@ export default function PricingSection() {
           </div>
 
           {/* Bagian Kanan */}
-          <div style={{ flex: "1 1 350px", padding: "56px 64px", background: "rgba(255, 255, 255, 0.03)", display: "flex", flexDirection: "column", justifyContent: "center", gap: "36px", borderLeft: "1px solid rgba(255, 255, 255, 0.05)", position: "relative", zIndex: 1 }}>
+          <div className="banner-right" style={{ flex: "1 1 300px", background: "rgba(255, 255, 255, 0.03)", display: "flex", flexDirection: "column", justifyContent: "center", gap: "36px", position: "relative", zIndex: 1 }}>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {["Custom Feature Sesuai Kebutuhan", "Nego Budget Lebih Fleksibel", "Konsultasi 100% Gratis"].map(tag => (
@@ -298,10 +296,42 @@ export default function PricingSection() {
 
         </div>
 
-        <p style={{ textAlign: "center", color: "var(--text-muted)", marginTop: "40px", fontSize: "14px" }}>
+        <p style={{ textAlign: "center", color: "var(--text-muted)", marginTop: "40px", fontSize: "14px", padding: "0 20px" }}>
           * Harga dapat berubah sesuai kompleksitas proyek. Hubungi kami untuk penawaran terbaik.
         </p>
       </div>
+
+      <style>{`
+        .custom-banner {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .banner-left, .banner-right {
+          padding: 56px 64px;
+        }
+        .banner-right {
+          border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 900px) {
+          .banner-left, .banner-right {
+            padding: 40px 32px;
+          }
+          .banner-right {
+            border-left: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .banner-left, .banner-right {
+            padding: 32px 24px;
+          }
+          .banner-left h3 {
+            font-size: 26px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
