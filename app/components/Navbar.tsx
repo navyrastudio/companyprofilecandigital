@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="navbar"
+      className={`navbar ${scrolled ? "" : "at-top"}`}
       style={{ boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none" }}
     >
       <div className="nav-inner">
@@ -73,7 +73,7 @@ export default function Navbar() {
             border: "none",
             cursor: "pointer",
             padding: "6px",
-            color: "var(--text-dark)",
+            color: scrolled ? "var(--text-dark)" : "#fff",
             borderRadius: "8px",
           }}
           className="mobile-menu-btn"
