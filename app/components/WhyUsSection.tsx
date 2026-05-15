@@ -13,10 +13,10 @@ import {
 } from "react-icons/fa";
 
 const statsData = [
-  { Icon: FaRocket, num: "150+", label: "Proyek Selesai", color: "#004258" },
-  { Icon: FaSmile, num: "98%", label: "Klien Puas", color: "#10b981" },
-  { Icon: FaStar, num: "5.0★", label: "Rating Google", color: "#f59e0b" },
-  { Icon: FaTrophy, num: "7+", label: "Tahun Pengalaman", color: "#8b5cf6" },
+  { Icon: FaRocket, num: "150+", label: "Proyek\nSelesai", color: "#004258" },
+  { Icon: FaSmile, num: "98%", label: "Klien\nPuas", color: "#10b981" },
+  { Icon: FaStar, num: "5.0★", label: "Rating\nGoogle", color: "#f59e0b" },
+  { Icon: FaTrophy, num: "7+", label: "Tahun\nPengalaman", color: "#8b5cf6" },
 ];
 
 const problems = [
@@ -38,10 +38,7 @@ export function WhyUsSection() {
   return (
     <section style={{ background: "#fff", padding: "88px 0" }}>
       <div className="container">
-        <div
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "72px", alignItems: "center" }}
-          className="two-col"
-        >
+        <div className="two-col why-us-grid">
           {/* Left */}
           <div className="reveal-left">
             <div className="section-label">Mengapa Website Penting?</div>
@@ -132,33 +129,18 @@ export function StatsSection() {
   return (
     <section style={{ background: "var(--bg-light)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "52px 0" }}>
       <div className="container">
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "32px",
-            textAlign: "center",
-          }}
-        >
+        <div className="stats-grid">
           {statsData.map(({ Icon, num, label, color }, i) => (
             <div key={label} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div
-                style={{
-                  width: 52,
-                  height: 52,
-                  borderRadius: "14px",
-                  background: color + "15",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 12px",
-                  border: `1px solid ${color}25`,
-                }}
-              >
-                <Icon size={22} color={color} />
+              <div className="stat-icon-wrap" style={{ background: color + "15", borderColor: color + "25" }}>
+                <Icon color={color} className="stat-icon" />
               </div>
               <div className="stat-num">{num}</div>
-              <div style={{ fontSize: "14px", color: "var(--text-muted)", marginTop: "4px" }}>{label}</div>
+              <div className="stat-label">
+                {label.split("\n").map((text, idx) => (
+                  <span key={idx} className="stat-label-line">{text}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
