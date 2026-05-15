@@ -36,17 +36,17 @@ const benefits = [
 
 export function WhyUsSection() {
   return (
-    <section style={{ background: "#fff", padding: "88px 0" }}>
+    <section className="whyus-section" style={{ background: "#fff", padding: "48px 0 88px", marginBottom: "-40px" }}>
       <div className="container">
         <div className="two-col why-us-grid">
           {/* Left */}
           <div className="reveal-left">
             <div className="section-label">Mengapa Website Penting?</div>
-            <h2 className="section-title" style={{ textAlign: "left", marginBottom: "20px" }}>
+            <h2 className="section-title whyus-title" style={{ textAlign: "left", marginBottom: "20px" }}>
               Bisnis Tanpa Website<br />
               <span>Kehilangan Peluang Besar</span>
             </h2>
-            <p style={{ color: "var(--text-body)", fontSize: "16px", lineHeight: 1.8, marginBottom: "24px" }}>
+            <p className="whyus-desc" style={{ color: "var(--text-body)", fontSize: "16px", lineHeight: 1.8, marginBottom: "24px" }}>
               Di era digital, orang rata-rata menghabiskan{" "}
               <strong style={{ color: "var(--text-dark)" }}>7+ jam per hari</strong> di internet.
               Website adalah kantor digital bisnis Anda — tempat pertama pelanggan potensial mencari informasi.
@@ -54,6 +54,7 @@ export function WhyUsSection() {
             {problems.map((item) => (
               <div
                 key={item}
+                className="whyus-problem-item"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -66,7 +67,7 @@ export function WhyUsSection() {
                 }}
               >
                 <FaTimesCircle size={15} color="#ef4444" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: "14px", color: "var(--text-body)" }}>{item}</span>
+                <span className="whyus-problem-text" style={{ fontSize: "14px", color: "var(--text-body)" }}>{item}</span>
               </div>
             ))}
           </div>
@@ -74,6 +75,7 @@ export function WhyUsSection() {
           {/* Right */}
           <div className="reveal-right">
             <div
+              className="whyus-benefit-card"
               style={{
                 background: "var(--bg-light)",
                 border: "1px solid var(--border)",
@@ -81,12 +83,13 @@ export function WhyUsSection() {
                 padding: "32px",
               }}
             >
-              <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--text-dark)", marginBottom: "20px" }}>
+              <h3 className="whyus-benefit-title" style={{ fontSize: "18px", fontWeight: 700, color: "var(--text-dark)", marginBottom: "20px" }}>
                 Dengan CanDigital, bisnis Anda:
               </h3>
               {benefits.map(({ Icon, text, color }) => (
                 <div
                   key={text}
+                  className="whyus-benefit-item"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -100,6 +103,7 @@ export function WhyUsSection() {
                   }}
                 >
                   <div
+                    className="whyus-benefit-icon"
                     style={{
                       width: 36,
                       height: 36,
@@ -113,7 +117,7 @@ export function WhyUsSection() {
                   >
                     <Icon size={16} color={color} />
                   </div>
-                  <span style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-dark)", flex: 1 }}>{text}</span>
+                  <span className="whyus-benefit-text" style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-dark)", flex: 1 }}>{text}</span>
                   <FaCheckCircle size={15} color="#22c55e" style={{ flexShrink: 0 }} />
                 </div>
               ))}
@@ -124,6 +128,7 @@ export function WhyUsSection() {
     </section>
   );
 }
+
 
 export function StatsSection() {
   return (
