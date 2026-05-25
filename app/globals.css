@@ -521,6 +521,13 @@ section {
 }
 .float { animation: float 3s ease-in-out infinite; }
 
+.navbar-logo-img {
+  height: 30px;
+  width: 158px;
+  object-fit: contain;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
 /* =====================
    RESPONSIVE
 ===================== */
@@ -530,4 +537,5 @@ section {
   .mobile-menu-btn { display: flex !important; }
   .two-col { grid-template-columns: 1fr !important; }
   .hide-mobile { display: none !important; }
+  .navbar-logo-img { height: 22px; width: 116px; }
 }
