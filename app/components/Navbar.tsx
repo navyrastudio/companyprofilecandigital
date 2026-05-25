@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" className="nav-logo">
           <img 
-            src={(scrolled && !mobileOpen) ? "/images/logo-candigit-nav-1.svg" : "/images/logo-candigit-nav-2.svg"} 
+            src={(scrolled && !mobileOpen) ? "/images/logo-candigit-nav-2.svg" : "/images/logo-candigit-nav-1.svg"} 
             alt="CanDigital Logo" 
             className="navbar-logo-img"
           />
