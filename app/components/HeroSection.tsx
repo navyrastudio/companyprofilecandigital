@@ -97,9 +97,10 @@ export default function HeroSection() {
               <span style={{
                 background: "linear-gradient(to right, #2FA084 0%, #43F0CD 100%)",
                 WebkitBackgroundClip: "text",
+                backgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                display: "inline-block",
-                filter: "drop-shadow(0 4px 12px rgba(47,160,132,0.3))"
+                color: "transparent",
+                display: "inline-block"
               }}>Profesional</span>
             </h1>
 
