@@ -27,11 +27,11 @@ export default function Navbar() {
       className={`navbar ${scrolled ? "" : "at-top"}`}
       style={{ boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none" }}
     >
-      <div className="nav-inner">
+      <div className="nav-inner" style={{ position: "relative", zIndex: 100 }}>
         {/* Logo */}
         <a href="#hero" className="nav-logo">
           <img 
-            src={scrolled ? "/images/logo-candigit-nav-1.svg" : "/images/logo-candigit-nav-2.svg"} 
+            src={(scrolled && !mobileOpen) ? "/images/logo-candigit-nav-1.svg" : "/images/logo-candigit-nav-2.svg"} 
             alt="CanDigital Logo" 
             className="navbar-logo-img"
           />
@@ -74,7 +74,7 @@ export default function Navbar() {
             border: "none",
             cursor: "pointer",
             padding: "6px",
-            color: scrolled ? "var(--text-dark)" : "#fff",
+            color: (scrolled && !mobileOpen) ? "var(--text-dark)" : "#fff",
             borderRadius: "8px",
           }}
           className="mobile-menu-btn"
@@ -83,28 +83,44 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          style={{
-            borderTop: "1px solid var(--border)",
-            background: "#fff",
-            padding: "12px 24px 20px",
-          }}
-        >
-          {navLinks.map((l) => (
+      {/* Mobile menu Overlay */}
+      <div
+        className="mobile-menu-overlay"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: "rgba(0, 45, 61, 0.98)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          zIndex: 90,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          opacity: mobileOpen ? 1 : 0,
+          visibility: mobileOpen ? "visible" : "hidden",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "28px", width: "100%", padding: "0 24px" }}>
+          {navLinks.map((l, i) => (
             <a
               key={l.label}
               href={l.href}
               onClick={() => setMobileOpen(false)}
               style={{
-                display: "block",
-                padding: "12px 0",
-                color: "var(--text-body)",
+                color: "#ffffff",
                 textDecoration: "none",
-                fontSize: "15px",
-                fontWeight: 500,
-                borderBottom: "1px solid var(--border)",
+                fontSize: "28px",
+                fontWeight: 700,
+                letterSpacing: "-0.02em",
+                transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
+                opacity: mobileOpen ? 1 : 0,
+                transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+                transitionDelay: mobileOpen ? `${0.1 + i * 0.08}s` : "0s",
               }}
             >
               {l.label}
@@ -114,12 +130,23 @@ export default function Navbar() {
             href="https://wa.me/6281234567890"
             className="btn btn-accent"
             style={{
-              marginTop: "16px",
+              marginTop: "24px",
               justifyContent: "center",
               width: "100%",
+              maxWidth: "280px",
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: "10px",
+              padding: "18px",
+              fontSize: "16px",
+              fontWeight: 700,
+              textDecoration: "none",
+              borderRadius: "50px",
+              boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
+              transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
+              opacity: mobileOpen ? 1 : 0,
+              transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+              transitionDelay: mobileOpen ? `${0.1 + navLinks.length * 0.08 + 0.1}s` : "0s",
             }}
             onClick={() => setMobileOpen(false)}
           >
@@ -127,7 +154,7 @@ export default function Navbar() {
             Konsultasi Gratis
           </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
