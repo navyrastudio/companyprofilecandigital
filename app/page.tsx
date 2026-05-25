@@ -48,7 +48,7 @@ export default function Home() {
         {/* Ticker marquee */}
         <div
           style={{
-            background: "var(--primary)",
+            background: "#227D66",
             padding: "12px 0",
             overflow: "hidden",
           }}
@@ -92,7 +92,7 @@ export default function Home() {
                   gap: "8px",
                 }}
               >
-                <span style={{ color: "#ff7a59", fontWeight: 800 }}>✦</span>
+                <span style={{ color: "#FF6B00", fontWeight: 800 }}>✦</span>
                 {item}
               </span>
             ))}

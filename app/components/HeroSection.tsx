@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section
       id="hero"
       style={{
-        background: "linear-gradient(135deg, #004258 0%, #005a75 100%)",
+        background: "linear-gradient(to top, #2FA084 0%, #43F0CD 100%)",
         padding: "110px 0 0",
         position: "relative",
       }}
@@ -24,7 +24,7 @@ export default function HeroSection() {
 
         {/* Elegant Soft Glows */}
         <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
-        <div style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 122, 89, 0.12) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        <div style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
 
         {/* Soft diagonal light ray */}
         <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
@@ -32,7 +32,7 @@ export default function HeroSection() {
 
       <div className="container" style={{ position: "relative", zIndex: 10 }}>
         {/* Floating Decorative Orbs */}
-        <div className="hero-float-2" style={{ position: "absolute", top: "10%", right: "45%", width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(135deg, rgba(255,122,89,0.8), rgba(255,80,53,0.8))", transform: "rotate(15deg)", boxShadow: "0 10px 20px rgba(255,122,89,0.3)", backdropFilter: "blur(4px)", zIndex: 0 }} />
+        <div className="hero-float-2" style={{ position: "absolute", top: "10%", right: "45%", width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(135deg, #FF7B00 0%, #FF4D00 100%)", transform: "rotate(15deg)", boxShadow: "0 10px 20px rgba(255,107,0,0.3)", backdropFilter: "blur(4px)", zIndex: 0 }} />
         <div className="hero-float-3" style={{ position: "absolute", bottom: "20%", left: "-5%", width: "24px", height: "24px", borderRadius: "50%", background: "linear-gradient(135deg, rgba(74,222,128,0.8), rgba(34,197,94,0.8))", boxShadow: "0 8px 16px rgba(74,222,128,0.3)", zIndex: 0 }} />
 
         <div
@@ -81,9 +81,7 @@ export default function HeroSection() {
               Jasa Pembuatan<br />
               Website{" "}
               <span style={{
-                background: "linear-gradient(90deg, #ff7a59, #ff5035)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "#FF6B00",
                 display: "inline-block"
               }}>Profesional</span>
             </h1>
@@ -113,7 +111,10 @@ export default function HeroSection() {
                   padding: "16px 32px",
                   fontSize: "16px",
                   fontWeight: 700,
-                  boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
+                  background: "linear-gradient(135deg, #FF7B00 0%, #FF4D00 100%)",
+                  color: "#ffffff",
+                  boxShadow: "0 12px 24px rgba(255,107,0,0.3)",
+                  border: "none",
                 }}
               >
                 Konsultasi Sekarang →
@@ -210,7 +211,7 @@ export default function HeroSection() {
                   }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  candigital.id
+                  candigit.com
                 </div>
               </div>
               {/* Page content mockup */}
@@ -218,18 +219,18 @@ export default function HeroSection() {
                 {/* Hero area mockup */}
                 <div
                   style={{
-                    background: "linear-gradient(135deg, #004258, #005a75)",
+                    background: "linear-gradient(to top, #2FA084 0%, #43F0CD 100%)",
                     borderRadius: "12px",
                     padding: "24px",
                     marginBottom: "16px",
-                    boxShadow: "0 10px 20px rgba(0,66,88,0.1)",
+                    boxShadow: "0 10px 20px rgba(47,160,132,0.2)",
                   }}
                 >
                   <div style={{ width: "60%", height: "12px", background: "rgba(255,255,255,0.9)", borderRadius: "6px", marginBottom: "12px" }} />
                   <div style={{ width: "85%", height: "8px", background: "rgba(255,255,255,0.4)", borderRadius: "4px", marginBottom: "8px" }} />
                   <div style={{ width: "70%", height: "8px", background: "rgba(255,255,255,0.3)", borderRadius: "4px", marginBottom: "20px" }} />
                   <div style={{ display: "flex", gap: "10px" }}>
-                    <div style={{ width: "100px", height: "32px", background: "#ff7a59", borderRadius: "50px", boxShadow: "0 4px 8px rgba(255,122,89,0.3)" }} />
+                    <div style={{ width: "100px", height: "32px", background: "linear-gradient(135deg, #FF7B00 0%, #FF4D00 100%)", borderRadius: "50px", boxShadow: "0 4px 8px rgba(255,107,0,0.2)" }} />
                     <div style={{ width: "90px", height: "32px", background: "rgba(255,255,255,0.15)", borderRadius: "50px", border: "1px solid rgba(255,255,255,0.3)" }} />
                   </div>
                 </div>
@@ -243,7 +244,7 @@ export default function HeroSection() {
                     </div>
                   ))}
                 </div>
-                <div style={{ background: "linear-gradient(90deg, #004258, #005a75)", borderRadius: "10px", padding: "12px 16px", textAlign: "center", fontSize: "12px", fontWeight: 800, color: "#fff", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+                <div style={{ background: "linear-gradient(45deg, #2FA084 0%, #43F0CD 100%)", borderRadius: "10px", padding: "12px 16px", textAlign: "center", fontSize: "12px", fontWeight: 800, color: "#fff", letterSpacing: "0.05em", textTransform: "uppercase" }}>
                   Hubungi Kami Sekarang →
                 </div>
               </div>
