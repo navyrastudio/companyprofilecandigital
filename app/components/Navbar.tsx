@@ -143,7 +143,7 @@ export default function Navbar() {
               color: "#fff",
               textDecoration: "none",
               borderRadius: "50px",
-              boxShadow: "0 12px 24px rgba(255,107,0,0.3)",
+              boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
               transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
               opacity: mobileOpen ? 1 : 0,
               transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
