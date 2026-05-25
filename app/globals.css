@@ -216,7 +216,7 @@ section {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(to right, rgba(47, 160, 132, 0.9) 0%, rgba(67, 240, 205, 0.9) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -284,7 +284,7 @@ section {
 .nav-link {
   display: inline-block;
   padding: 8px 14px;
-  color: #45556c;
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -301,13 +301,13 @@ section {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: #2FA084;
+  background-color: #ffffff;
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .nav-link:hover {
-  color: #2FA084;
+  color: #ffffff;
 }
 
 .nav-link:hover::after {

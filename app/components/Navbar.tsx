@@ -74,7 +74,7 @@ export default function Navbar() {
             border: "none",
             cursor: "pointer",
             padding: "6px",
-            color: (scrolled && !mobileOpen) ? "var(--text-dark)" : "#fff",
+            color: mobileOpen ? "#45556c" : (scrolled ? "#fff" : "#2FA084"),
             borderRadius: "8px",
           }}
           className="mobile-menu-btn"
@@ -92,7 +92,7 @@ export default function Navbar() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: "rgba(0, 45, 61, 0.98)",
+          background: "rgba(255, 255, 255, 0.98)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
           zIndex: 90,
@@ -112,7 +112,7 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setMobileOpen(false)}
               style={{
-                color: "#ffffff",
+                color: "#45556c",
                 textDecoration: "none",
                 fontSize: "28px",
                 fontWeight: 700,
@@ -139,7 +139,7 @@ export default function Navbar() {
               padding: "18px",
               fontSize: "16px",
               fontWeight: 700,
-              background: "linear-gradient(135deg, #FF7B00 0%, #FF4D00 100%)",
+              background: "#ff7a59",
               color: "#fff",
               textDecoration: "none",
               borderRadius: "50px",
