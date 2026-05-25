@@ -1,47 +1,4 @@
-const testimonials = [
-  {
-    name: "Budi Santoso",
-    company: "PT Maju Bersama",
-    role: "CEO",
-    rating: 5,
-    text: "Tim CanDigital sangat profesional dan responsif. Website company profile kami selesai tepat waktu dan hasilnya melebihi ekspektasi. Traffic naik 3x lipat dalam 2 bulan!",
-  },
-  {
-    name: "Siti Rahayu",
-    company: "Toko Fashion Kita",
-    role: "Owner",
-    rating: 5,
-    text: "Awalnya ragu, tapi ternyata prosesnya mudah banget. Tim-nya sabar menjelaskan dan desain yang dihasilkan sangat keren. Penjualan online langsung meningkat signifikan.",
-  },
-  {
-    name: "Ahmad Fauzi",
-    company: "Klinik Sehat Prima",
-    role: "Direktur",
-    rating: 5,
-    text: "Sangat puas dengan hasilnya! Website klinik kami kini terlihat sangat profesional. Pasien baru semakin banyak datang melalui Google karena mudah ditemukan.",
-  },
-  {
-    name: "Dewi Lestari",
-    company: "Properti Nusantara",
-    role: "Marketing Manager",
-    rating: 5,
-    text: "CanDigital benar-benar paham kebutuhan kami. Desainnya elegan, loading cepat, dan mudah dikelola sendiri. Investasi terbaik untuk bisnis kami.",
-  },
-  {
-    name: "Rizky Pratama",
-    company: "RoboTech Indonesia",
-    role: "Founder",
-    rating: 5,
-    text: "Custom web app yang mereka bangun sangat membantu operasional bisnis kami. Fitur-fiturnya tepat sasaran dan interface-nya intuitif. Highly recommended!",
-  },
-  {
-    name: "Nurul Hidayah",
-    company: "Edu Pintar Online",
-    role: "Direktur",
-    rating: 5,
-    text: "Platform e-learning kami berhasil dibuat dengan sangat baik. Tim teknisnya kompeten dan komunikatif. Proses revisi juga tidak ribet sama sekali.",
-  },
-];
+import testimonials from "../../data/testimonials.json";
 
 const colors = ["#004258", "#8b5cf6", "#10b981", "#f59e0b", "#3b82f6", "#ef4444"];
 
