@@ -4,11 +4,11 @@ import { FaPhone, FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
   { label: "Beranda", href: "#hero" },
-  { label: "Layanan", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Proyek", href: "#portfolio" },
   { label: "Cara Kerja", href: "#process" },
-  { label: "Harga", href: "#pricing" },
-  { label: "Testimoni", href: "#testimonials" },
+  { label: "Layanan", href: "#pricing" },
+  // { label: "Harga", href: "#pricing" },
+  // { label: "Testimoni", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -128,7 +128,6 @@ export default function Navbar() {
           ))}
           <a
             href="https://wa.me/6281234567890"
-            className="btn btn-accent"
             style={{
               marginTop: "24px",
               justifyContent: "center",
@@ -143,6 +142,11 @@ export default function Navbar() {
               textDecoration: "none",
               borderRadius: "50px",
               boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
+              background: "linear-gradient(135deg, #FF7B00 0%, #FF4D00 100%)",
+              color: "#fff",
+              textDecoration: "none",
+              borderRadius: "50px",
+              boxShadow: "0 12px 24px rgba(255,107,0,0.3)",
               transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
               opacity: mobileOpen ? 1 : 0,
               transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
