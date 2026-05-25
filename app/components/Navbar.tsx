@@ -30,10 +30,11 @@ export default function Navbar() {
       <div className="nav-inner">
         {/* Logo */}
         <a href="#hero" className="nav-logo">
-          <div className="nav-logo-icon">C</div>
-          <span className="nav-logo-text">
-            Can<span>Digital</span>
-          </span>
+          <img 
+            src={scrolled ? "/images/logo-candigit-nav-1.svg" : "/images/logo-candigit-nav-2.svg"} 
+            alt="CanDigital Logo" 
+            className="navbar-logo-img"
+          />
         </a>
 
         {/* Desktop nav */}

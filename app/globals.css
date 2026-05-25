@@ -613,6 +613,13 @@ section {
   animation: float 3s ease-in-out infinite;
 }
 
+.navbar-logo-img {
+  height: 30px;
+  width: 158px;
+  object-fit: contain;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
 /* =====================
    RESPONSIVE GRIDS & LAYOUTS
 ===================== */
@@ -742,6 +749,12 @@ section {
 
 /* Mobile (≤ 768px) */
 @media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: flex !important; }
+  .two-col { grid-template-columns: 1fr !important; }
+  .hide-mobile { display: none !important; }
+  .navbar-logo-img { height: 22px; width: 116px; }
   section {
     padding: 56px 0;
   }
