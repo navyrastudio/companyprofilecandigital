@@ -4,11 +4,11 @@ import { FaPhone, FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
   { label: "Beranda", href: "#hero" },
-  { label: "Layanan", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Proyek", href: "#portfolio" },
   { label: "Cara Kerja", href: "#process" },
-  { label: "Harga", href: "#pricing" },
-  { label: "Testimoni", href: "#testimonials" },
+  { label: "Layanan", href: "#pricing" },
+  // { label: "Harga", href: "#pricing" },
+  // { label: "Testimoni", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
