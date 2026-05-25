@@ -3,36 +3,51 @@ export default function HeroSection() {
     <section
       id="hero"
       style={{
-        background: "linear-gradient(135deg, #004258 0%, #005a75 100%)",
-        padding: "110px 0 0",
+        background: "linear-gradient(to bottom, #2FA084 0%, #43F0CD 100%)",
+        paddingTop: "110px",
+        paddingBottom: "40px",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
         position: "relative",
       }}
     >
       {/* Decorative Background Elements */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, overflow: "hidden", pointerEvents: "none", zIndex: 1 }}>
-        {/* Subtle fading grid pattern */}
+        {/* CSS Noise Texture (Grain) */}
         <div
           style={{
             position: "absolute",
             top: 0, left: 0, right: 0, bottom: 0,
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)"
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            opacity: 0.12,
+            mixBlendMode: "overlay",
           }}
         />
 
-        {/* Elegant Soft Glows */}
-        <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
-        <div style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 122, 89, 0.12) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        {/* Subtle Dotted Pattern */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundImage: "radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px)",
+            backgroundSize: "36px 36px",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%)",
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%)"
+          }}
+        />
+
+        {/* Elegant Animated Soft Glows */}
+        <div className="hero-float-1" style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        <div className="hero-float-2" style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
 
         {/* Soft diagonal light ray */}
-        <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
+        <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
       </div>
 
       <div className="container" style={{ position: "relative", zIndex: 10 }}>
         {/* Floating Decorative Orbs */}
-        <div className="hero-float-2" style={{ position: "absolute", top: "10%", right: "45%", width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(135deg, rgba(255,122,89,0.8), rgba(255,80,53,0.8))", transform: "rotate(15deg)", boxShadow: "0 10px 20px rgba(255,122,89,0.3)", backdropFilter: "blur(4px)", zIndex: 0 }} />
+        <div className="hero-float-2" style={{ position: "absolute", top: "10%", right: "45%", width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(135deg, #FFDF00 0%, #FF6B00 100%)", transform: "rotate(15deg)", boxShadow: "0 10px 20px rgba(255,107,0,0.3)", backdropFilter: "blur(4px)", zIndex: 0 }} />
         <div className="hero-float-3" style={{ position: "absolute", bottom: "20%", left: "-5%", width: "24px", height: "24px", borderRadius: "50%", background: "linear-gradient(135deg, rgba(74,222,128,0.8), rgba(34,197,94,0.8))", boxShadow: "0 8px 16px rgba(74,222,128,0.3)", zIndex: 0 }} />
 
         <div
@@ -62,7 +77,7 @@ export default function HeroSection() {
               }}
             >
               <span className="pulse-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 10px #4ade80" }} />
-              <span style={{ color: "rgba(255,255,255,0.95)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.02em" }}>
+              <span style={{ color: "#E2FBF5", fontSize: "13px", fontWeight: 700, letterSpacing: "0.02em" }}>
                 150+ Proyek Berhasil Diselesaikan
               </span>
             </div>
@@ -71,31 +86,33 @@ export default function HeroSection() {
               style={{
                 fontSize: "clamp(32px, 4.5vw, 54px)",
                 fontWeight: 800,
-                color: "#fff",
+                color: "#ffffff",
                 marginBottom: "16px",
                 lineHeight: 1.15,
                 letterSpacing: "-0.01em",
-                textShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                textShadow: "0 10px 30px rgba(0,45,61,0.2)",
               }}
             >
               Jasa Pembuatan<br />
               Website{" "}
               <span style={{
-                background: "linear-gradient(90deg, #ff7a59, #ff5035)",
+                background: "linear-gradient(135deg, #FFDF00 0%, #FF6B00 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                display: "inline-block"
+                display: "inline-block",
+                filter: "drop-shadow(0px 4px 12px rgba(255,107,0,0.3))"
               }}>Profesional</span>
             </h1>
 
             <p
               style={{
                 fontSize: "17px",
-                color: "rgba(255,255,255,0.85)",
+                color: "#CCFBF1",
                 marginBottom: "24px",
                 lineHeight: 1.7,
                 maxWidth: "500px",
                 fontWeight: 400,
+                textShadow: "0 2px 10px rgba(0,45,61,0.1)",
               }}
             >
               Kami membantu bisnis Anda tampil kredibel dan menarik di era digital.
@@ -113,7 +130,10 @@ export default function HeroSection() {
                   padding: "16px 32px",
                   fontSize: "16px",
                   fontWeight: 700,
-                  boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
+                  background: "linear-gradient(135deg, #FFDF00 0%, #FF6B00 100%)",
+                  color: "#ffffff",
+                  boxShadow: "0 12px 24px rgba(255,107,0,0.3)",
+                  border: "none",
                 }}
               >
                 Konsultasi Sekarang →
@@ -135,7 +155,7 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Stats */}
+            {/* <h2 style={{ fontSize: "24px", fontWeight: 700, color: "#fff", marginBottom: "24px" }}>Stats</h2> */}
             <div
               style={{
                 display: "flex",
@@ -144,7 +164,7 @@ export default function HeroSection() {
                 flexWrap: "wrap",
               }}
             >
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+              {/* <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <div style={{ fontSize: "28px", fontWeight: 800, color: "#fff", lineHeight: 1 }}>150+</div>
                 <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>Proyek Selesai</div>
               </div>
@@ -159,8 +179,8 @@ export default function HeroSection() {
                   5.0 <span style={{ color: "#fbbf24", fontSize: "22px" }}>★</span>
                 </div>
                 <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>Rating Google</div>
-              </div>
-            </div>
+              </div>*/}
+            </div> 
           </div>
 
           {/* Right — browser mockup */}
@@ -210,7 +230,7 @@ export default function HeroSection() {
                   }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  candigital.id
+                  candigit.com
                 </div>
               </div>
               {/* Page content mockup */}
@@ -218,18 +238,18 @@ export default function HeroSection() {
                 {/* Hero area mockup */}
                 <div
                   style={{
-                    background: "linear-gradient(135deg, #004258, #005a75)",
+                    background: "linear-gradient(to bottom, #2FA084 0%, #43F0CD 100%)",
                     borderRadius: "12px",
                     padding: "24px",
                     marginBottom: "16px",
-                    boxShadow: "0 10px 20px rgba(0,66,88,0.1)",
+                    boxShadow: "0 10px 20px rgba(47,160,132,0.2)",
                   }}
                 >
                   <div style={{ width: "60%", height: "12px", background: "rgba(255,255,255,0.9)", borderRadius: "6px", marginBottom: "12px" }} />
                   <div style={{ width: "85%", height: "8px", background: "rgba(255,255,255,0.4)", borderRadius: "4px", marginBottom: "8px" }} />
                   <div style={{ width: "70%", height: "8px", background: "rgba(255,255,255,0.3)", borderRadius: "4px", marginBottom: "20px" }} />
                   <div style={{ display: "flex", gap: "10px" }}>
-                    <div style={{ width: "100px", height: "32px", background: "#ff7a59", borderRadius: "50px", boxShadow: "0 4px 8px rgba(255,122,89,0.3)" }} />
+                    <div style={{ width: "100px", height: "32px", background: "linear-gradient(135deg, #FFDF00 0%, #FF6B00 100%)", borderRadius: "50px", boxShadow: "0 4px 8px rgba(255,107,0,0.2)" }} />
                     <div style={{ width: "90px", height: "32px", background: "rgba(255,255,255,0.15)", borderRadius: "50px", border: "1px solid rgba(255,255,255,0.3)" }} />
                   </div>
                 </div>
@@ -243,7 +263,7 @@ export default function HeroSection() {
                     </div>
                   ))}
                 </div>
-                <div style={{ background: "linear-gradient(90deg, #004258, #005a75)", borderRadius: "10px", padding: "12px 16px", textAlign: "center", fontSize: "12px", fontWeight: 800, color: "#fff", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+                <div style={{ background: "linear-gradient(45deg, #2FA084 0%, #43F0CD 100%)", borderRadius: "10px", padding: "12px 16px", textAlign: "center", fontSize: "12px", fontWeight: 800, color: "#fff", letterSpacing: "0.05em", textTransform: "uppercase" }}>
                   Hubungi Kami Sekarang →
                 </div>
               </div>
