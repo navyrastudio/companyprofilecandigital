@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section
       id="hero"
       style={{
-        background: "linear-gradient(to bottom, #2FA084 0%, #43F0CD 100%)",
+        background: "#ffffff",
         paddingTop: "110px",
         paddingBottom: "40px",
         minHeight: "100vh",
@@ -30,7 +30,7 @@ export default function HeroSection() {
           style={{
             position: "absolute",
             top: 0, left: 0, right: 0, bottom: 0,
-            backgroundImage: "radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px)",
+            backgroundImage: "radial-gradient(rgba(0,0,0,0.08) 1.5px, transparent 1.5px)",
             backgroundSize: "36px 36px",
             maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%)",
             WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 90%)"
@@ -38,11 +38,11 @@ export default function HeroSection() {
         />
 
         {/* Elegant Animated Soft Glows */}
-        <div className="hero-float-1" style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
+        <div className="hero-float-1" style={{ position: "absolute", top: "-15%", left: "-10%", width: "800px", height: "800px", background: "radial-gradient(circle, rgba(47, 160, 132, 0.15) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
         <div className="hero-float-2" style={{ position: "absolute", bottom: "-10%", right: "-10%", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 60%)", filter: "blur(60px)", borderRadius: "50%" }} />
 
         {/* Soft diagonal light ray */}
-        <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
+        <div style={{ position: "absolute", top: "-10%", right: "10%", width: "100%", height: "300px", background: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.03) 50%, transparent 100%)", transform: "rotate(-35deg)", filter: "blur(30px)" }} />
       </div>
 
       <div className="container" style={{ position: "relative", zIndex: 10 }}>
@@ -67,18 +67,18 @@ export default function HeroSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "10px",
-                background: "rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.03)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(0,0,0,0.08)",
                 borderRadius: "50px",
                 padding: "8px 20px",
                 marginBottom: "16px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
               }}
             >
-              <span className="pulse-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 10px #4ade80" }} />
-              <span style={{ color: "#E2FBF5", fontSize: "13px", fontWeight: 700, letterSpacing: "0.02em" }}>
-                150+ Proyek Berhasil Diselesaikan
+              <span className="pulse-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#2FA084", display: "inline-block", boxShadow: "0 0 10px #2FA084" }} />
+              <span style={{ color: "#334155", fontSize: "13px", fontWeight: 700, letterSpacing: "0.02em" }}>
+                Siap Mewujudkan Website Impian Anda
               </span>
             </div>
 
@@ -86,31 +86,31 @@ export default function HeroSection() {
               style={{
                 fontSize: "clamp(32px, 4.5vw, 54px)",
                 fontWeight: 800,
-                color: "#ffffff",
+                color: "#0f172a",
                 marginBottom: "16px",
                 lineHeight: 1.15,
                 letterSpacing: "-0.01em",
-                textShadow: "0 10px 30px rgba(0,45,61,0.2)",
               }}
             >
               Jasa Pembuatan<br />
               Website{" "}
               <span style={{
-                color: "#ff7a59",
+                background: "linear-gradient(to right, #2FA084 0%, #43F0CD 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
                 display: "inline-block",
-                textShadow: "0 4px 12px rgba(255,122,89,0.3)"
+                filter: "drop-shadow(0 4px 12px rgba(47,160,132,0.3))"
               }}>Profesional</span>
             </h1>
 
             <p
               style={{
                 fontSize: "17px",
-                color: "#CCFBF1",
+                color: "#475569",
                 marginBottom: "24px",
                 lineHeight: 1.7,
                 maxWidth: "500px",
                 fontWeight: 400,
-                textShadow: "0 2px 10px rgba(0,45,61,0.1)",
               }}
             >
               Kami membantu bisnis Anda tampil kredibel dan menarik di era digital.
@@ -128,9 +128,9 @@ export default function HeroSection() {
                   padding: "16px 32px",
                   fontSize: "16px",
                   fontWeight: 700,
-                  background: "#ff7a59",
+                  background: "linear-gradient(to right, #2FA084 0%, #43F0CD 100%)",
                   color: "#ffffff",
-                  boxShadow: "0 12px 24px rgba(255,122,89,0.3)",
+                  boxShadow: "0 12px 24px rgba(47,160,132,0.3)",
                   border: "none",
                 }}
               >
@@ -145,8 +145,8 @@ export default function HeroSection() {
                   fontSize: "16px",
                   fontWeight: 700,
                   background: "transparent",
-                  border: "2px solid rgba(255,255,255,0.3)",
-                  color: "#fff",
+                  border: "2px solid #cbd5e1",
+                  color: "#0f172a",
                 }}
               >
                 Lihat Portfolio
@@ -282,17 +282,17 @@ export default function HeroSection() {
           100% { transform: translateY(0px) scale(1) rotate(15deg); }
         }
         @keyframes pulseDot {
-          0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-          70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
-          100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+          0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(47, 160, 132, 0.7); }
+          70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(47, 160, 132, 0); }
+          100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(47, 160, 132, 0); }
         }
         .hero-float-1 { animation: heroFloat 6s ease-in-out infinite; }
         .hero-float-2 { animation: heroFloatAlt 8s ease-in-out infinite; }
         .hero-float-3 { animation: heroFloat 7s ease-in-out infinite 2s; }
         .pulse-dot { animation: pulseDot 2s infinite; }
 
-        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(255,122,89,0.4) !important; }
-        .hero-btn-outline:hover { background: rgba(255,255,255,0.1) !important; transform: translateY(-3px); }
+        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(47,160,132,0.4) !important; }
+        .hero-btn-outline:hover { background: rgba(0,0,0,0.05) !important; transform: translateY(-3px); }
 
         @media (max-width: 900px) {
           #hero .two-col { grid-template-columns: 1fr !important; }
