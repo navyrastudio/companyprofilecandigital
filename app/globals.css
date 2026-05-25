@@ -284,7 +284,7 @@ section {
 .nav-link {
   display: inline-block;
   padding: 8px 14px;
-  color: var(--text-body);
+  color: #45556c;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -301,13 +301,13 @@ section {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: var(--primary);
+  background-color: #2FA084;
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .nav-link:hover {
-  color: var(--primary);
+  color: #2FA084;
 }
 
 .nav-link:hover::after {
@@ -315,15 +315,15 @@ section {
 }
 
 .navbar.at-top .nav-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: #45556c;
 }
 
 .navbar.at-top .nav-link::after {
-  background-color: #fff;
+  background-color: #2FA084;
 }
 
 .navbar.at-top .nav-link:hover {
-  color: #fff;
+  color: #2FA084;
 }
 
 /* =====================
