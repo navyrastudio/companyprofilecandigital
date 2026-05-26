@@ -7,11 +7,11 @@ export default function Footer() {
     {
       title: "Layanan",
       links: [
-        { label: "Landing Page", href: "#services" },
-        { label: "Company Profile", href: "#services" },
-        { label: "Toko Online", href: "#services" },
-        { label: "Custom Web App", href: "#services" },
-        { label: "Redesain Website", href: "#services" },
+        { label: "Landing Page", href: "#pricing" },
+        { label: "Company Profile", href: "#pricing" },
+        { label: "Toko Online", href: "#pricing" },
+        { label: "Custom Web App", href: "#pricing" },
+        { label: "Redesain Website", href: "#pricing" },
       ],
     },
     {

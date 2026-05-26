@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import ServicesSection from "./components/ServicesSection";
 import PortfolioSection from "./components/PortfolioSection";
 import ProcessSection from "./components/ProcessSection";
 import TestimonialsSection from "./components/TestimonialsSection";
@@ -56,7 +55,6 @@ export default function Home() {
 
         <WhyUsSection />
         <StatsSection />
-        <ServicesSection />
         <PortfolioSection />
         <ProcessSection />
         <TestimonialsSection />
