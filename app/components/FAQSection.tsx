@@ -1,43 +1,105 @@
 "use client";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-
 import faqs from "../../data/faq.json";
 
 export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq">
-      <div className="container">
-        {/* Header wrapper pakai reveal agar animasi masuk */}
-        <div className="section-header reveal">
-          <div className="section-label">FAQ</div>
-          <h2 className="section-title">
-            Pertanyaan yang <span>Sering Ditanyakan</span>
+    <section
+      id="faq"
+      style={{
+        background: "#ffffff",
+        position: "relative",
+        overflow: "hidden",
+        padding: "88px 0",
+      }}
+    >
+      {/* Background dot grid */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "radial-gradient(rgba(47,160,132,0.06) 1.2px, transparent 1.2px)",
+          backgroundSize: "26px 26px",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      {/* Ambient glow */}
+      <div style={{ position: "absolute", top: "-60px", right: "-60px", width: "380px", height: "380px", borderRadius: "50%", background: "radial-gradient(circle, rgba(47,160,132,0.08) 0%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "340px", height: "340px", borderRadius: "50%", background: "radial-gradient(circle, rgba(67,240,205,0.07) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", zIndex: 0 }} />
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+
+        {/* Section Header */}
+        <div className="section-header faq-section-header">
+          <div
+            className="section-label"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              background: "rgba(47,160,132,0.08)",
+              border: "1px solid rgba(47,160,132,0.2)",
+              padding: "6px 18px",
+              borderRadius: "50px",
+              color: "#2FA084",
+              fontSize: "12px",
+              fontWeight: 800,
+              letterSpacing: "0.08em",
+              marginBottom: "18px",
+            }}
+          >
+            FAQ
+          </div>
+          <h2 className="section-title" style={{ color: "var(--text-dark)", marginBottom: "14px" }}>
+            Pertanyaan yang <span style={{ color: "#2FA084" }}>Sering Ditanyakan</span>
           </h2>
           <p className="section-desc">
             Temukan jawaban atas pertanyaan umum seputar proses pembuatan website bersama CanDigital.
           </p>
         </div>
 
-        {/* FAQ list — TIDAK pakai class reveal di sini agar tidak conflict dengan state toggle */}
-        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+        {/* FAQ Grid — 2 columns */}
+        <div style={{
+          maxWidth: "1100px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "16px",
+          alignItems: "start",
+        }}
+          className="faq-grid"
+        >
           {faqs.map((faq, i) => {
             const isOpen = open === i;
             return (
               <div
                 key={i}
                 style={{
-                  border: `1px solid ${isOpen ? "rgba(0,66,88,0.3)" : "var(--border)"}`,
-                  borderRadius: "12px",
+                  border: `1px solid ${isOpen ? "rgba(47,160,132,0.30)" : "rgba(47,160,132,0.10)"}`,
+                  borderRadius: "16px",
                   overflow: "hidden",
                   marginBottom: "12px",
                   background: "#fff",
-                  boxShadow: isOpen ? "var(--shadow-sm)" : "none",
-                  transition: "border-color 0.2s, box-shadow 0.2s",
+                  boxShadow: isOpen
+                    ? "0 8px 28px rgba(47,160,132,0.10)"
+                    : "0 2px 8px rgba(0,66,88,0.04)",
+                  transition: "border-color 0.25s, box-shadow 0.25s",
+                  position: "relative",
                 }}
               >
+                {/* Top accent line when open */}
+                {isOpen && (
+                  <div style={{
+                    position: "absolute",
+                    top: 0, left: 0, right: 0,
+                    height: "3px",
+                    background: "linear-gradient(to right, #2FA084, #43F0CD)",
+                  }} />
+                )}
+
                 {/* Question button */}
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
@@ -55,38 +117,41 @@ export default function FAQSection() {
                     justifyContent: "space-between",
                     alignItems: "center",
                     gap: "12px",
-                    color: isOpen ? "var(--primary)" : "var(--text-dark)",
-                    fontSize: "16px",
-                    fontWeight: 600,
+                    color: isOpen ? "#2FA084" : "var(--text-dark)",
+                    fontSize: "15.5px",
+                    fontWeight: 700,
                     fontFamily: "inherit",
-                    transition: "color 0.2s",
+                    transition: "color 0.25s",
                   }}
                 >
                   <span>{faq.q}</span>
 
-                  {/* Icon filled */}
+                  {/* Icon */}
                   <div
                     style={{
                       width: 30,
                       height: 30,
                       borderRadius: "50%",
-                      background: isOpen ? "var(--primary)" : "var(--bg-light)",
-                      border: `1px solid ${isOpen ? "var(--primary)" : "var(--border)"}`,
+                      background: isOpen
+                        ? "linear-gradient(135deg, #2FA084, #43F0CD)"
+                        : "rgba(47,160,132,0.06)",
+                      border: `1px solid ${isOpen ? "transparent" : "rgba(47,160,132,0.15)"}`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                       transition: "all 0.25s ease",
+                      boxShadow: isOpen ? "0 4px 12px rgba(47,160,132,0.28)" : "none",
                     }}
                   >
                     {isOpen
-                      ? <FaMinus size={11} color="#fff" />
-                      : <FaPlus size={11} color="var(--text-muted)" />
+                      ? <FaMinus size={10} color="#fff" />
+                      : <FaPlus size={10} color="#2FA084" />
                     }
                   </div>
                 </button>
 
-                {/* Answer — toggle via inline style (tidak pakai class) */}
+                {/* Answer */}
                 <div
                   id={`faq-answer-${i}`}
                   role="region"
@@ -99,11 +164,11 @@ export default function FAQSection() {
                   <div
                     style={{
                       padding: "0 24px 20px",
+                      paddingTop: "14px",
                       color: "var(--text-body)",
-                      fontSize: "15px",
+                      fontSize: "14.5px",
                       lineHeight: 1.75,
-                      borderTop: "1px solid var(--border)",
-                      paddingTop: "16px",
+                      borderTop: "1px dashed rgba(47,160,132,0.15)",
                     }}
                   >
                     {faq.a}
@@ -114,6 +179,12 @@ export default function FAQSection() {
           })}
         </div>
       </div>
+
+      <style>{`
+        .faq-section-header {
+          animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
     </section>
   );
 }
