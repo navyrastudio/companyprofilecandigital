@@ -2,37 +2,49 @@
   {
     "name": "PT Maju Bersama",
     "type": "Company Profile",
-    "industry": "Konstruksi",
-    "color": "#004258"
+    "industry": "Konstruksi & Sipil",
+    "color": "#004258",
+    "description": "Website resmi profil perusahaan konstruksi sipil skala nasional dengan portofolio proyek interaktif bergaya grid.",
+    "tech": ["Next.js", "React", "Vanilla CSS", "Intersection Observer"]
   },
   {
     "name": "Toko Fashion Kita",
-    "type": "E-Commerce",
+    "type": "Sistem Toko Online",
     "industry": "Fashion & Retail",
-    "color": "#8b5cf6"
+    "color": "#8b5cf6",
+    "description": "Platform e-commerce modern yang menampilkan katalog interaktif, checkout instan, dan integrasi payment gateway.",
+    "tech": ["React", "Custom CSS", "Framer Motion", "Payment API"]
   },
   {
     "name": "Klinik Sehat Prima",
     "type": "Landing Page",
-    "industry": "Kesehatan",
-    "color": "#10b981"
+    "industry": "Layanan Kesehatan",
+    "color": "#10b981",
+    "description": "Landing page konversi tinggi untuk booking dokter online terintegrasi dengan jadwal konsultasi langsung.",
+    "tech": ["HTML5", "CSS Gradients", "JavaScript", "Google Maps API"]
   },
   {
     "name": "Properti Nusantara",
     "type": "Company Profile",
-    "industry": "Properti",
-    "color": "#f59e0b"
+    "industry": "Properti & Real Estate",
+    "color": "#f59e0b",
+    "description": "Portal listing properti eksklusif dengan pencarian filter canggih, galeri foto HD, dan simulasi kalkulator KPR.",
+    "tech": ["Next.js", "Responsive Grid", "CSS Variables", "Interactive Forms"]
   },
   {
     "name": "RoboTech Indonesia",
-    "type": "Custom Web App",
-    "industry": "Teknologi",
-    "color": "#3b82f6"
+    "type": "Sistem Toko Online",
+    "industry": "Teknologi & IoT",
+    "color": "#3b82f6",
+    "description": "Dashboard analitik real-time berbasis web untuk pemantauan performa sensor IoT di lini produksi pabrik.",
+    "tech": ["React", "Recharts", "WebSockets", "CSS Glassmorphism"]
   },
   {
     "name": "Edu Pintar Online",
-    "type": "E-Commerce",
-    "industry": "Pendidikan",
-    "color": "#ef4444"
+    "type": "Sistem Toko Online",
+    "industry": "Pendidikan & Kursus",
+    "color": "#ef4444",
+    "description": "LMS (Learning Management System) interaktif untuk penjualan, streaming, dan pendaftaran kursus online bersertifikat.",
+    "tech": ["Next.js", "Video Streamer", "Stripe Integration", "Tailored HSL"]
   }
 ]
