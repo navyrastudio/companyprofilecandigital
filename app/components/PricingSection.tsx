@@ -1,26 +1,65 @@
 "use client";
 
-import { FaCheck, FaTimes } from "react-icons/fa";
-
+import { FaCheck, FaTimes, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import plans from "../../data/pricing.json";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" style={{ background: "var(--bg-light)", padding: "100px 0", position: "relative" }}>
-      {/* Decorative background element */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%)", zIndex: 0 }} />
+    <section
+      id="pricing"
+      style={{
+        background: "#f4fbf9",
+        padding: "88px 0",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background dot grid */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "radial-gradient(rgba(47,160,132,0.07) 1.2px, transparent 1.2px)",
+          backgroundSize: "24px 24px",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      {/* Glow orbs */}
+      <div style={{ position: "absolute", top: "-80px", right: "-60px", width: "420px", height: "420px", borderRadius: "50%", background: "radial-gradient(circle, rgba(47,160,132,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", borderRadius: "50%", background: "radial-gradient(circle, rgba(67,240,205,0.08) 0%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", zIndex: 0 }} />
 
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
-        <div className="section-header reveal">
-          <div className="section-label" style={{ color: "var(--accent)", background: "var(--bg-white)", padding: "6px 16px", borderRadius: "50px", border: "1px solid var(--border)", boxShadow: "var(--shadow-sm)" }}>Harga Paket</div>
-          <h2 className="section-title">
-            Investasi yang <span>Sepadan</span>
+
+        {/* ── Section Header ── */}
+        <div className="section-header pricing-section-header">
+          <div
+            className="section-label"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              background: "rgba(47,160,132,0.08)",
+              border: "1px solid rgba(47,160,132,0.2)",
+              padding: "6px 18px",
+              borderRadius: "50px",
+              color: "#2FA084",
+              fontSize: "12px",
+              fontWeight: 800,
+              letterSpacing: "0.08em",
+              marginBottom: "18px",
+            }}
+          >
+            Harga Paket
+          </div>
+          <h2 className="section-title" style={{ color: "var(--text-dark)", marginBottom: "14px" }}>
+            Investasi yang <span style={{ color: "#2FA084" }}>Sepadan</span>
           </h2>
           <p className="section-desc">
             Harga transparan, kualitas premium. Pilih paket yang sesuai kebutuhan bisnis Anda.
           </p>
         </div>
 
+        {/* ── Pricing Grid ── */}
         <div
           className="pricing-grid"
           style={{
@@ -33,227 +72,269 @@ export default function PricingSection() {
           {plans.map((p, i) => (
             <div
               key={p.name}
-              className="reveal"
+              className="pricing-card-wrap"
               style={{
-                transitionDelay: `${i * 0.1}s`,
-                background: p.featured ? "linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%)" : "#fff",
-                border: p.featured ? "none" : "1px solid var(--border)",
+                animationDelay: `${i * 0.1}s`,
+                background: p.featured
+                  ? "linear-gradient(160deg, #1d7a60 0%, #2FA084 50%, #34c898 100%)"
+                  : "#ffffff",
+                border: p.featured ? "none" : "1px solid rgba(47,160,132,0.12)",
                 borderRadius: "24px",
                 padding: "40px 32px",
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
-                boxShadow: p.featured ? "0 24px 48px rgba(0, 66, 88, 0.25)" : "var(--shadow-sm)",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                boxShadow: p.featured
+                  ? "0 24px 56px rgba(47,160,132,0.30)"
+                  : "0 4px 20px rgba(0,66,88,0.05)",
+                transition: "transform 0.35s ease, box-shadow 0.35s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-8px)";
-                e.currentTarget.style.boxShadow = p.featured ? "0 32px 64px rgba(0, 66, 88, 0.3)" : "var(--shadow-md)";
+                e.currentTarget.style.boxShadow = p.featured
+                  ? "0 32px 64px rgba(47,160,132,0.38)"
+                  : "0 20px 44px rgba(47,160,132,0.14)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = p.featured ? "0 24px 48px rgba(0, 66, 88, 0.25)" : "var(--shadow-sm)";
+                e.currentTarget.style.boxShadow = p.featured
+                  ? "0 24px 56px rgba(47,160,132,0.30)"
+                  : "0 4px 20px rgba(0,66,88,0.05)";
               }}
             >
+              {/* Top accent bar (non-featured only) */}
+              {!p.featured && (
+                <div style={{
+                  position: "absolute",
+                  top: 0, left: 0, right: 0,
+                  height: "3px",
+                  background: "linear-gradient(to right, #2FA084, #43F0CD)",
+                  borderRadius: "24px 24px 0 0",
+                }} />
+              )}
+
+              {/* Best choice badge */}
               {p.bestChoice && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-16px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    background: "var(--accent)",
-                    color: "#fff",
-                    fontSize: "12px",
-                    fontWeight: 800,
-                    padding: "6px 20px",
-                    borderRadius: "50px",
-                    whiteSpace: "nowrap",
-                    boxShadow: "0 4px 12px rgba(255, 122, 89, 0.4)",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  PILIHAN TERBAIK
+                <div style={{
+                  position: "absolute",
+                  top: "-16px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  background: "linear-gradient(135deg, #2FA084, #43F0CD)",
+                  color: "#fff",
+                  fontSize: "11px",
+                  fontWeight: 800,
+                  padding: "6px 20px",
+                  borderRadius: "50px",
+                  whiteSpace: "nowrap",
+                  boxShadow: "0 6px 16px rgba(47,160,132,0.40)",
+                  letterSpacing: "0.07em",
+                }}>
+                  ✦ PILIHAN TERBAIK
                 </div>
               )}
 
               <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+
+                {/* Plan name + tagline */}
                 <div style={{ marginBottom: "20px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px", gap: "12px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "10px", gap: "12px" }}>
                     <h3 style={{ fontSize: "22px", fontWeight: 800, color: p.featured ? "#fff" : "var(--text-dark)", lineHeight: 1.2, flex: 1 }}>
                       {p.name}
                     </h3>
                     <div style={{
                       fontSize: "10px",
-                      color: p.featured ? "var(--primary-dark)" : "var(--primary)",
-                      background: p.featured ? "#fff" : "var(--bg-light)",
-                      padding: "6px 12px",
+                      color: p.featured ? "#2FA084" : "#2FA084",
+                      background: p.featured ? "#ffffff" : "rgba(47,160,132,0.08)",
+                      border: p.featured ? "none" : "1px solid rgba(47,160,132,0.2)",
+                      padding: "5px 12px",
                       borderRadius: "50px",
                       fontWeight: 800,
                       textTransform: "uppercase",
                       letterSpacing: "0.05em",
-                      border: p.featured ? "none" : "1px solid var(--border)",
-                      boxShadow: p.featured ? "0 4px 12px rgba(0,0,0,0.15)" : "0 2px 6px rgba(0,0,0,0.05)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "4px",
                       whiteSpace: "nowrap",
-                      flexShrink: 0
+                      flexShrink: 0,
                     }}>
-                      {p.tagline === "PALING PRAKTIS" && "⚡"}
-                      {p.tagline === "PALING POPULER" && "🔥"}
-                      {p.tagline === "PALING LENGKAP" && "💎"}
+                      {p.tagline === "PALING PRAKTIS" && "⚡ "}
+                      {p.tagline === "PALING POPULER" && "🔥 "}
+                      {p.tagline === "PALING LENGKAP" && "💎 "}
                       {p.tagline}
                     </div>
                   </div>
-                  <div style={{ fontSize: "14px", color: p.featured ? "rgba(255,255,255,0.8)" : "var(--text-muted)", lineHeight: 1.6 }}>
+                  <div style={{ fontSize: "14px", color: p.featured ? "rgba(255,255,255,0.80)" : "var(--text-muted)", lineHeight: 1.6 }}>
                     {p.subtitle}
                   </div>
                 </div>
 
-                <div style={{ marginBottom: "28px", paddingBottom: "28px", borderBottom: p.featured ? "1px solid rgba(255,255,255,0.15)" : "1px solid var(--border)" }}>
+                {/* Price */}
+                <div style={{ marginBottom: "28px", paddingBottom: "24px", borderBottom: p.featured ? "1px solid rgba(255,255,255,0.18)" : "1px solid rgba(47,160,132,0.10)" }}>
                   {p.price === "Custom" ? (
-                    <div style={{ fontSize: "40px", fontWeight: 800, color: p.featured ? "#fff" : "var(--primary)" }}>Custom</div>
+                    <div style={{ fontSize: "40px", fontWeight: 800, color: p.featured ? "#fff" : "#2FA084" }}>Custom</div>
                   ) : (
                     <div style={{ display: "flex", alignItems: "flex-end", gap: "4px" }}>
-                      <span style={{ color: p.featured ? "rgba(255,255,255,0.8)" : "var(--text-muted)", fontSize: "16px", marginBottom: "8px", fontWeight: 600 }}>Rp</span>
-                      <span style={{ fontSize: "48px", fontWeight: 800, color: p.featured ? "#fff" : "var(--primary)", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                      <span style={{ color: p.featured ? "rgba(255,255,255,0.75)" : "var(--text-muted)", fontSize: "16px", marginBottom: "8px", fontWeight: 600 }}>Rp</span>
+                      <span style={{ fontSize: "48px", fontWeight: 800, color: p.featured ? "#fff" : "#2FA084", lineHeight: 1, letterSpacing: "-0.02em" }}>
                         {p.price}
                       </span>
-                      <span style={{ color: p.featured ? "rgba(255,255,255,0.8)" : "var(--text-muted)", fontSize: "16px", marginBottom: "8px", fontWeight: 600 }}>
+                      <span style={{ color: p.featured ? "rgba(255,255,255,0.75)" : "var(--text-muted)", fontSize: "16px", marginBottom: "8px", fontWeight: 600 }}>
                         {p.suffix}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "14px", marginBottom: "32px", flex: 1 }}>
+                {/* Feature list */}
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "13px", marginBottom: "28px", flex: 1, padding: 0 }}>
                   {p.features.map((f) => (
                     <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "14px", color: p.featured ? "#fff" : "var(--text-dark)" }}>
-                      <div style={{ background: p.featured ? "rgba(255,255,255,0.2)" : "var(--bg-light2)", borderRadius: "50%", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
-                        <FaCheck size={10} color={p.featured ? "#fff" : "#22c55e"} />
+                      <div style={{
+                        background: p.featured ? "rgba(255,255,255,0.20)" : "rgba(47,160,132,0.10)",
+                        borderRadius: "50%",
+                        width: "20px", height: "20px",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        flexShrink: 0, marginTop: "1px",
+                      }}>
+                        <FaCheck size={9} color={p.featured ? "#fff" : "#2FA084"} />
                       </div>
                       <span style={{ fontWeight: 500 }}>{f}</span>
                     </li>
                   ))}
                   {p.notIncluded.map((f) => (
-                    <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "14px", color: p.featured ? "rgba(255,255,255,0.5)" : "var(--text-muted)", textDecoration: "line-through" }}>
-                      <div style={{ background: p.featured ? "rgba(255,255,255,0.1)" : "var(--bg-light)", borderRadius: "50%", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
-                        <FaTimes size={10} color={p.featured ? "rgba(255,255,255,0.5)" : "#cbd5e1"} />
+                    <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "14px", color: p.featured ? "rgba(255,255,255,0.45)" : "var(--text-muted)", textDecoration: "line-through" }}>
+                      <div style={{
+                        background: p.featured ? "rgba(255,255,255,0.08)" : "#f1f5f9",
+                        borderRadius: "50%",
+                        width: "20px", height: "20px",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        flexShrink: 0, marginTop: "1px",
+                      }}>
+                        <FaTimes size={9} color={p.featured ? "rgba(255,255,255,0.4)" : "#cbd5e1"} />
                       </div>
                       <span>{f}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div style={{ marginTop: "auto", marginBottom: "24px", display: "flex", alignItems: "center", gap: "14px", borderTop: p.featured ? "1px solid rgba(255,255,255,0.15)" : "1px solid var(--border)", paddingTop: "24px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: p.featured ? "rgba(255,255,255,0.1)" : "var(--bg-light2)", border: p.featured ? "1px solid rgba(255,255,255,0.2)" : "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={p.featured ? "#fff" : "var(--text-muted)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
+                {/* Duration row */}
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", borderTop: p.featured ? "1px solid rgba(255,255,255,0.15)" : "1px solid rgba(47,160,132,0.10)", paddingTop: "20px", marginBottom: "24px" }}>
+                  <div style={{
+                    width: "34px", height: "34px", borderRadius: "10px",
+                    background: p.featured ? "rgba(255,255,255,0.12)" : "rgba(47,160,132,0.08)",
+                    border: p.featured ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(47,160,132,0.15)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={p.featured ? "#fff" : "#2FA084"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: "11px", color: p.featured ? "rgba(255,255,255,0.7)" : "var(--text-muted)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "2px" }}>WAKTU PENGERJAAN</div>
-                    <div style={{ fontSize: "15px", fontWeight: 700, color: p.featured ? "#fff" : "var(--text-dark)" }}>{p.duration}</div>
+                    <div style={{ fontSize: "10px", color: p.featured ? "rgba(255,255,255,0.65)" : "var(--text-muted)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "2px" }}>WAKTU PENGERJAAN</div>
+                    <div style={{ fontSize: "14px", fontWeight: 700, color: p.featured ? "#fff" : "var(--text-dark)" }}>{p.duration}</div>
                   </div>
                 </div>
 
+                {/* CTA Button */}
                 <a
                   href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20info%20paket"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="pricing-cta-btn"
                   style={{
                     width: "100%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "8px",
-                    padding: "16px 24px",
+                    padding: "15px 24px",
                     borderRadius: "12px",
-                    fontSize: "15px",
+                    fontSize: "14px",
                     fontWeight: 700,
                     textDecoration: "none",
                     transition: "all 0.3s ease",
-                    background: p.featured ? "#fff" : "var(--primary)",
-                    color: p.featured ? "var(--primary-dark)" : "#fff",
-                    boxShadow: p.featured ? "0 8px 16px rgba(0,0,0,0.15)" : "var(--shadow-sm)",
+                    background: p.featured
+                      ? "#ffffff"
+                      : "linear-gradient(to right, #2FA084, #43F0CD)",
+                    color: p.featured ? "#2FA084" : "#ffffff",
+                    boxShadow: p.featured
+                      ? "0 8px 20px rgba(0,0,0,0.12)"
+                      : "0 8px 20px rgba(47,160,132,0.25)",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-2px)";
-                    if (!p.featured) {
-                      e.currentTarget.style.background = "var(--primary-light)";
-                    }
+                    e.currentTarget.style.boxShadow = p.featured
+                      ? "0 12px 28px rgba(0,0,0,0.18)"
+                      : "0 14px 28px rgba(47,160,132,0.35)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
-                    if (!p.featured) {
-                      e.currentTarget.style.background = "var(--primary)";
-                    }
+                    e.currentTarget.style.boxShadow = p.featured
+                      ? "0 8px 20px rgba(0,0,0,0.12)"
+                      : "0 8px 20px rgba(47,160,132,0.25)";
                   }}
                 >
-                  {p.cta} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                  {p.cta} <FaArrowRight size={12} />
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="reveal custom-banner" style={{
-          marginTop: "80px",
-          background: "var(--primary-dark)",
-          borderRadius: "24px",
-          boxShadow: "0 24px 48px rgba(0, 45, 61, 0.15)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          position: "relative",
-          overflow: "hidden"
-        }}>
+        {/* ── Custom Banner ── */}
+        <div
+          className="custom-banner"
+          style={{
+            marginTop: "72px",
+            background: "linear-gradient(135deg, #1a6e54 0%, #2FA084 60%, #34c898 100%)",
+            borderRadius: "24px",
+            boxShadow: "0 24px 56px rgba(47,160,132,0.28)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          {/* Decorative circles */}
+          <div style={{ position: "absolute", top: "-60px", left: "-60px", width: "280px", height: "280px", borderRadius: "50%", border: "32px solid rgba(255,255,255,0.05)", pointerEvents: "none", zIndex: 0 }} />
+          <div style={{ position: "absolute", bottom: "-100px", right: "10%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(67,240,205,0.12) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+          <div style={{ position: "absolute", top: "30%", left: "48%", width: "8px", height: "8px", borderRadius: "50%", background: "rgba(255,255,255,0.4)", pointerEvents: "none", zIndex: 0 }} />
+          <div style={{ position: "absolute", top: "18%", left: "58%", width: "14px", height: "14px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.25)", pointerEvents: "none", zIndex: 0 }} />
 
-          {/* Elemen Dekoratif Abstrak */}
-          <div style={{ position: "absolute", top: "-50px", left: "-50px", width: "250px", height: "250px", borderRadius: "50%", border: "30px solid rgba(255, 255, 255, 0.03)", pointerEvents: "none", zIndex: 0 }} />
-          <div style={{ position: "absolute", bottom: "-100px", right: "15%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(255, 122, 89, 0.08) 0%, rgba(0, 0, 0, 0) 70%)", pointerEvents: "none", zIndex: 0 }} />
-          <div style={{ position: "absolute", top: "40%", left: "45%", width: "8px", height: "8px", borderRadius: "50%", background: "var(--accent-light)", opacity: 0.5, pointerEvents: "none", zIndex: 0 }} />
-          <div style={{ position: "absolute", top: "20%", left: "55%", width: "12px", height: "12px", borderRadius: "50%", border: "2px solid var(--accent-light)", opacity: 0.3, pointerEvents: "none", zIndex: 0 }} />
-
-          {/* Ribbon Kustom */}
+          {/* Ribbon */}
           <div style={{
-            position: "absolute",
-            top: "32px",
-            right: "-48px",
+            position: "absolute", top: "32px", right: "-48px",
             width: "200px",
-            background: "linear-gradient(135deg, var(--accent), #e05e3f)",
+            background: "rgba(255,255,255,0.15)",
+            backdropFilter: "blur(8px)",
             color: "#fff",
             padding: "8px 0",
             textAlign: "center",
-            fontSize: "12px",
+            fontSize: "11px",
             fontWeight: 800,
             textTransform: "uppercase",
-            letterSpacing: "0.2em",
+            letterSpacing: "0.18em",
             transform: "rotate(45deg)",
-            boxShadow: "0 4px 12px rgba(255, 122, 89, 0.4)",
-            zIndex: 10
+            zIndex: 10,
           }}>
             CUSTOM
           </div>
 
-          {/* Bagian Kiri */}
+          {/* Left */}
           <div className="banner-left" style={{ flex: "1 1 350px", position: "relative", zIndex: 1 }}>
-            <div style={{ width: "64px", height: "64px", borderRadius: "18px", background: "linear-gradient(135deg, var(--accent), #e05e3f)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "32px", boxShadow: "0 8px 24px rgba(255, 122, 89, 0.3)" }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            <div style={{ width: "60px", height: "60px", borderRadius: "18px", background: "rgba(255,255,255,0.15)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "28px" }}>
+              <FaWhatsapp size={28} color="#fff" />
             </div>
-            <h3 style={{ fontSize: "32px", fontWeight: 800, color: "#fff", marginBottom: "16px", lineHeight: 1.3 }}>
+            <h3 style={{ fontSize: "30px", fontWeight: 800, color: "#fff", marginBottom: "14px", lineHeight: 1.3 }}>
               Bingung Memilih atau Ingin Custom Website?
             </h3>
-            <p style={{ fontSize: "16px", color: "rgba(255, 255, 255, 0.7)", lineHeight: 1.7, margin: 0 }}>
+            <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.80)", lineHeight: 1.75, margin: 0 }}>
               Kami sangat terbuka untuk diskusi jika Anda membutuhkan desain berbeda, fitur tambahan, atau ingin menanyakan paket yang paling sesuai dengan budget bisnis Anda.
             </p>
           </div>
 
-          {/* Bagian Kanan */}
-          <div className="banner-right" style={{ flex: "1 1 300px", background: "rgba(255, 255, 255, 0.03)", display: "flex", flexDirection: "column", justifyContent: "center", gap: "36px", position: "relative", zIndex: 1 }}>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          {/* Right */}
+          <div className="banner-right" style={{ flex: "1 1 300px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "32px", position: "relative", zIndex: 1 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {["Custom Feature Sesuai Kebutuhan", "Nego Budget Lebih Fleksibel", "Konsultasi 100% Gratis"].map(tag => (
-                <div key={tag} style={{ display: "flex", alignItems: "center", gap: "16px", fontSize: "16px", fontWeight: 600, color: "#fff" }}>
-                  <div style={{ background: "rgba(255, 255, 255, 0.1)", borderRadius: "50%", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <FaCheck size={12} color="var(--accent-light)" />
+                <div key={tag} style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "15px", fontWeight: 600, color: "#fff" }}>
+                  <div style={{ background: "rgba(255,255,255,0.18)", borderRadius: "50%", width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <FaCheck size={11} color="#fff" />
                   </div>
                   {tag}
                 </div>
@@ -265,72 +346,61 @@ export default function PricingSection() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: "#fff",
-                color: "var(--primary-dark)",
-                padding: "18px 32px",
+                background: "#ffffff",
+                color: "#2FA084",
+                padding: "16px 32px",
                 borderRadius: "50px",
-                fontSize: "16px",
+                fontSize: "15px",
                 fontWeight: 800,
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "12px",
-                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
+                gap: "10px",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
                 transition: "all 0.3s ease",
-                width: "100%"
+                width: "100%",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(0, 0, 0, 0.2)";
-                e.currentTarget.style.background = "var(--bg-light)";
+                e.currentTarget.style.boxShadow = "0 14px 32px rgba(0,0,0,0.18)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0, 0, 0, 0.15)";
-                e.currentTarget.style.background = "#fff";
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.12)";
               }}
             >
-              Konsultasi via WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+              <FaWhatsapp size={18} /> Konsultasi via WhatsApp
             </a>
           </div>
-
         </div>
 
-        <p style={{ textAlign: "center", color: "var(--text-muted)", marginTop: "40px", fontSize: "14px", padding: "0 20px" }}>
+        <p style={{ textAlign: "center", color: "var(--text-muted)", marginTop: "36px", fontSize: "13.5px" }}>
           * Harga dapat berubah sesuai kompleksitas proyek. Hubungi kami untuk penawaran terbaik.
         </p>
       </div>
 
       <style>{`
+        .pricing-section-header {
+          animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
         .custom-banner {
           display: flex;
           flex-wrap: wrap;
         }
         .banner-left, .banner-right {
-          padding: 56px 64px;
+          padding: 52px 60px;
         }
         .banner-right {
-          border-left: 1px solid rgba(255, 255, 255, 0.05);
+          border-left: 1px solid rgba(255,255,255,0.08);
         }
-
         @media (max-width: 900px) {
-          .banner-left, .banner-right {
-            padding: 40px 32px;
-          }
-          .banner-right {
-            border-left: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-          }
+          .banner-left, .banner-right { padding: 40px 32px; }
+          .banner-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
         }
-
         @media (max-width: 480px) {
-          .banner-left, .banner-right {
-            padding: 32px 24px;
-          }
-          .banner-left h3 {
-            font-size: 26px !important;
-          }
+          .banner-left, .banner-right { padding: 32px 24px; }
+          .banner-left h3 { font-size: 24px !important; }
         }
       `}</style>
     </section>
