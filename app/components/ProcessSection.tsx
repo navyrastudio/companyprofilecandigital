@@ -115,7 +115,7 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* Steps Grid — 2 columns */}
+        {/* Steps Grid — 3 columns */}
         <div className="process-grid">
           {processData.map((step, i) => {
             const IconComponent = iconMap[step.icon];
@@ -132,7 +132,7 @@ export default function ProcessSection() {
                   ["--process-gradient" as string]: accent.gradient,
                 } as React.CSSProperties}
               >
-                {/* Step number badge + connector line */}
+                {/* Step number badge */}
                 <div className="process-left">
                   <div
                     className="process-icon-wrap"
@@ -140,10 +140,6 @@ export default function ProcessSection() {
                   >
                     {IconComponent && <IconComponent size={22} color="#fff" />}
                   </div>
-                  {/* Vertical connector — hide on last item */}
-                  {!isLast && i % 2 === 0 && (
-                    <div className="process-connector" />
-                  )}
                 </div>
 
                 {/* Content */}
