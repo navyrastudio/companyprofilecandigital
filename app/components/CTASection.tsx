@@ -135,7 +135,6 @@ export default function CTASection() {
             <a
               href="mailto:hello@candigit.id"
               className="btn cta-btn-secondary"
-              className="btn btn-white"
               id="cta-email"
               style={{
                 display: "inline-flex",
