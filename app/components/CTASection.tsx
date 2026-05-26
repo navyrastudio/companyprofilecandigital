@@ -56,7 +56,7 @@ export default function CTASection() {
 
           <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap", marginBottom: "56px" }}>
             <a
-              href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20konsultasi%20gratis"
+              href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20konsultasi%20gratis"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-accent"
@@ -67,7 +67,7 @@ export default function CTASection() {
               Chat via WhatsApp
             </a>
             <a
-              href="mailto:hello@candigital.id"
+              href="mailto:hello@candigit.id"
               className="btn btn-white"
               id="cta-email"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}

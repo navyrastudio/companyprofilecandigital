@@ -67,7 +67,7 @@ export function WhyUsSection() {
             <div className="whyus-benefit-card">
               <span className="whyus-card-badge">Solusi Digital</span>
               <h3 className="whyus-benefit-title">
-                Dengan CanDigital, bisnis Anda:
+                Dengan CanDigit, bisnis Anda:
               </h3>
               {benefits.map(({ Icon, text, color }) => (
                 <div key={text} className="whyus-benefit-item">

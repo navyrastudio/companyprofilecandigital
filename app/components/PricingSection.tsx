@@ -233,7 +233,7 @@ export default function PricingSection() {
 
                 {/* CTA Button */}
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20info%20paket"
+                  href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20info%20paket"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pricing-cta-btn"
@@ -342,7 +342,7 @@ export default function PricingSection() {
             </div>
 
             <a
-              href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20diskusi%20custom%20website"
+              href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20diskusi%20custom%20website"
               target="_blank"
               rel="noopener noreferrer"
               style={{

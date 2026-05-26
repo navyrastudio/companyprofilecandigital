@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
         <div className="section-header testi-section-header">
           <div className="testi-label">Testimoni</div>
           <h2 className="section-title">
-            Kata Mereka tentang <span className="testi-brand">CanDigital</span>
+            Kata Mereka tentang <span className="testi-brand">CanDigit</span>
           </h2>
           <p className="section-desc">
             Biarkan klien kami yang berbicara. Kepuasan mereka adalah prioritas

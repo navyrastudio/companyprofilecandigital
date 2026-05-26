@@ -57,7 +57,7 @@ export default function FAQSection() {
             Pertanyaan yang <span style={{ color: "#2FA084" }}>Sering Ditanyakan</span>
           </h2>
           <p className="section-desc">
-            Temukan jawaban atas pertanyaan umum seputar proses pembuatan website bersama CanDigital.
+            Temukan jawaban atas pertanyaan umum seputar proses pembuatan website bersama CanDigit.
           </p>
         </div>
 
