@@ -470,20 +470,198 @@ section {
 }
 
 /* =====================
-   PROCESS STEPS
+   PROCESS STEPS (Premium Redesign)
 ===================== */
-.step-number {
+
+/* Section header entrance animation (always visible, no observer) */
+.process-section-header {
+  animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3-column responsive grid — 2 rows of 3 cards */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Individual step card */
+.process-card {
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 160, 132, 0.10);
+  border-radius: 20px;
+  padding: 26px 24px;
+  box-shadow: 0 6px 24px rgba(0, 66, 88, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: processCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes processCardIn {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(47, 160, 132, 0.22);
+  box-shadow:
+    0 20px 48px rgba(0, 66, 88, 0.10),
+    0 4px 16px var(--process-shadow, rgba(47,160,132,0.18));
+}
+
+/* Subtle background shimmer on hover */
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--process-gradient, linear-gradient(135deg, #2FA084, #43F0CD));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.process-card:hover::before {
+  opacity: 0.03;
+}
+
+/* Left column: icon + connector */
+.process-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient icon circle */
+.process-icon-wrap {
   width: 52px;
   height: 52px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 18px;
   flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-card:hover .process-icon-wrap {
+  transform: rotate(-6deg) scale(1.08);
+  filter: brightness(1.08);
+}
+
+/* Dashed vertical connector (left column, even cards only) */
+.process-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 24px;
+  background: linear-gradient(to bottom, rgba(47,160,132,0.35), transparent);
+  border-radius: 1px;
+  margin-top: 8px;
+}
+
+/* Right content area */
+.process-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* STEP XX pill chip */
+.process-step-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.process-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.process-card:hover .process-title {
+  color: #2FA084;
+}
+
+.process-desc {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Thin gradient accent line at bottom of card */
+.process-accent-bar {
+  height: 3px;
+  border-radius: 2px;
+  margin-top: auto;
+  padding-top: 12px;
+  background: var(--process-gradient, linear-gradient(to right, #2FA084, #43F0CD));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.process-card:hover .process-accent-bar {
+  opacity: 1;
+}
+
+/* Bottom CTA area */
+.process-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 56px;
+  text-align: center;
+  animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.process-cta-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Responsive: tablet → 2 cols, mobile → 1 col */
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .process-connector {
+    display: none;
+  }
 }
 
 /* =====================
