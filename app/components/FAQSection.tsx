@@ -61,12 +61,11 @@ export default function FAQSection() {
           </p>
         </div>
 
-        {/* FAQ Grid — 2 columns */}
+        {/* FAQ Grid */}
         <div style={{
           maxWidth: "1100px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
           gap: "16px",
           alignItems: "start",
         }}
@@ -183,6 +182,14 @@ export default function FAQSection() {
       <style>{`
         .faq-section-header {
           animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .faq-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 768px) {
+          .faq-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </section>
