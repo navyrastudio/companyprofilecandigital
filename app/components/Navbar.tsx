@@ -32,7 +32,7 @@ export default function Navbar() {
         <a href="#hero" className="nav-logo">
           <img 
             src={(scrolled && !mobileOpen) ? "/images/logo-candigit-nav-2.svg" : "/images/logo-candigit-nav-1.svg"} 
-            alt="CanDigital Logo" 
+            alt="CanDigit Logo" 
             className="navbar-logo-img"
           />
         </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20konsultasi"
+            href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20konsultasi"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-accent"

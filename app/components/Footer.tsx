@@ -26,7 +26,7 @@ export default function Footer() {
     {
       title: "Kontak",
       links: [
-        { label: "hello@candigital.id", href: "mailto:hello@candigital.id" },
+        { label: "hello@candigit.id", href: "mailto:hello@candigit.id" },
         { label: "+62 812-3456-7890", href: "tel:+6281234567890" },
         { label: "WhatsApp Kami", href: "https://wa.me/6281234567890" },
         { label: "Instagram", href: "#" },
@@ -59,7 +59,7 @@ export default function Footer() {
             <a href="#hero" className="nav-logo" style={{ marginBottom: "16px", display: "inline-flex" }}>
               <div className="nav-logo-icon" style={{ background: "var(--accent)" }}>C</div>
               <span className="nav-logo-text" style={{ color: "#fff" }}>
-                Can<span style={{ color: "var(--accent)" }}>Digital</span>
+                Can<span style={{ color: "var(--accent)" }}>Digit</span>
               </span>
             </a>
             <p style={{ fontSize: "14px", lineHeight: 1.7, maxWidth: "270px", marginBottom: "24px", color: "rgba(255,255,255,0.55)" }}>
@@ -121,7 +121,7 @@ export default function Footer() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
           <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)" }}>
-            © {year} CanDigital. All rights reserved.
+            © {year} CanDigit. All rights reserved.
           </p>
           <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)" }}>
             Dibuat dengan ❤️ untuk bisnis Indonesia

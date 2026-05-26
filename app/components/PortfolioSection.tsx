@@ -437,7 +437,7 @@ export default function PortfolioSection() {
 
               {/* Conversion WhatsApp Button */}
               <a 
-                href={`https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20tertarik%20dengan%20proyek%20${encodeURIComponent(selectedProject.name)}%20dan%20ingin%20konsultasi%20pembuatan%20website%20serupa.`} 
+                href={`https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20tertarik%20dengan%20proyek%20${encodeURIComponent(selectedProject.name)}%20dan%20ingin%20konsultasi%20pembuatan%20website%20serupa.`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn hero-btn" 
