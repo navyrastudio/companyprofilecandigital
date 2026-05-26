@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import ServicesSection from "./components/ServicesSection";
 import PortfolioSection from "./components/PortfolioSection";
 import ProcessSection from "./components/ProcessSection";
 import TestimonialsSection from "./components/TestimonialsSection";
@@ -45,63 +44,17 @@ export default function Home() {
       <main>
         <HeroSection />
 
-        {/* Ticker marquee */}
+        {/* Spacer for layout */}
         <div
           style={{
-            background: "#227D66",
+            background: "transparent",
             padding: "12px 0",
             overflow: "hidden",
           }}
-        >
-          {/* <div
-            style={{
-              display: "flex",
-              width: "max-content",
-              animation: "marquee 35s linear infinite",
-            }}
-          >
-            {[
-              "150+ Proyek Selesai",
-              "98% Klien Puas",
-              "Rating 5.0 Google",
-              "Desain Custom",
-              "Fast Delivery",
-              "SEO Friendly",
-              "Mobile Responsive",
-              "Support Setelah Launch",
-              "150+ Proyek Selesai",
-              "98% Klien Puas",
-              "Rating 5.0 Google",
-              "Desain Custom",
-              "Fast Delivery",
-              "SEO Friendly",
-              "Mobile Responsive",
-              "Support Setelah Launch",
-            ].map((item, i) => (
-              <span
-                key={i}
-                style={{
-                  padding: "0 28px",
-                  color: "rgba(255,255,255,0.85)",
-                  fontSize: "13px",
-                  fontWeight: 600,
-                  whiteSpace: "nowrap",
-                  borderRight: "1px solid rgba(255,255,255,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                }}
-              >
-                <span style={{ color: "#FF6B00", fontWeight: 800 }}>✦</span>
-                {item}
-              </span>
-            ))}
-          </div> */}
-        </div>
+        ></div>
 
         <WhyUsSection />
         <StatsSection />
-        <ServicesSection />
         <PortfolioSection />
         <ProcessSection />
         <TestimonialsSection />
@@ -113,7 +66,7 @@ export default function Home() {
 
       {/* WhatsApp float button */}
       <a
-        href="https://wa.me/6281234567890?text=Halo%20CanDigital%2C%20saya%20ingin%20konsultasi"
+        href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20konsultasi"
         target="_blank"
         rel="noopener noreferrer"
         id="wa-float"

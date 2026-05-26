@@ -37,6 +37,19 @@ export default function Navbar() {
               className="navbar-logo-img"
             />
           </a>
+    <nav
+      className={`navbar ${scrolled ? "" : "at-top"}`}
+      style={{ boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.08)" : "none" }}
+    >
+      <div className="nav-inner" style={{ position: "relative", zIndex: 100 }}>
+        {/* Logo */}
+        <a href="#hero" className="nav-logo">
+          <img 
+            src={(scrolled && !mobileOpen) ? "/images/logo-candigit-nav-2.svg" : "/images/logo-candigit-nav-1.svg"} 
+            alt="CanDigit Logo" 
+            className="navbar-logo-img"
+          />
+        </a>
 
           {/* Desktop nav */}
           <div className="nav-links">
@@ -69,6 +82,13 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+          ))}
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20konsultasi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-accent"
+            id="nav-cta"
             style={{
               display: "none",
               background: "transparent",

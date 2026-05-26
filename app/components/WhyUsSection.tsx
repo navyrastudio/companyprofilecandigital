@@ -6,18 +6,7 @@ import {
   FaGlobe,
   FaTimesCircle,
   FaCheckCircle,
-  FaRocket,
-  FaSmile,
-  FaStar,
-  FaTrophy,
 } from "react-icons/fa";
-
-const statsData = [
-  { Icon: FaRocket, num: "150+", label: "Proyek\nSelesai", color: "#004258" },
-  { Icon: FaSmile, num: "98%", label: "Klien\nPuas", color: "#10b981" },
-  { Icon: FaStar, num: "5.0★", label: "Rating\nGoogle", color: "#f59e0b" },
-  { Icon: FaTrophy, num: "7+", label: "Tahun\nPengalaman", color: "#8b5cf6" },
-];
 
 const problems = [
   "Sulit ditemukan di Google",
@@ -36,89 +25,62 @@ const benefits = [
 
 export function WhyUsSection() {
   return (
-    <section className="whyus-section" style={{ background: "#fff", padding: "48px 0 88px", marginBottom: "-40px" }}>
+    <section className="whyus-section" style={{ marginBottom: "-40px" }}>
+      {/* Glowing Backdrop Orbs */}
+      <div className="whyus-orb-1"></div>
+      <div className="whyus-orb-2"></div>
+
+      {/* Decorative Interactive Shapes */}
+      <div className="whyus-shape whyus-shape-1"></div>
+      <div className="whyus-shape whyus-shape-2"></div>
+      <div className="whyus-shape whyus-shape-3"></div>
+      <div className="whyus-shape whyus-shape-4"></div>
+
       <div className="container">
         <div className="two-col why-us-grid">
-          {/* Left */}
-          <div className="reveal-left">
+          {/* Left Column */}
+          <div className="whyus-left-col">
             <div className="section-label">Mengapa Website Penting?</div>
-            <h2 className="section-title whyus-title" style={{ textAlign: "left", marginBottom: "20px" }}>
+            <h2 className="section-title whyus-title" style={{ textAlign: "left" }}>
               Bisnis Tanpa Website<br />
               <span>Kehilangan Peluang Besar</span>
             </h2>
-            <p className="whyus-desc" style={{ color: "var(--text-body)", fontSize: "16px", lineHeight: 1.8, marginBottom: "24px" }}>
+            <p className="whyus-desc">
               Di era digital, orang rata-rata menghabiskan{" "}
-              <strong style={{ color: "var(--text-dark)" }}>7+ jam per hari</strong> di internet.
+              <strong>7+ jam per hari</strong> di internet.
               Website adalah kantor digital bisnis Anda — tempat pertama pelanggan potensial mencari informasi.
             </p>
-            {problems.map((item) => (
-              <div
-                key={item}
-                className="whyus-problem-item"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  padding: "10px 14px",
-                  background: "#fff5f5",
-                  border: "1px solid #fecaca",
-                  borderRadius: "10px",
-                  marginBottom: "8px",
-                }}
-              >
-                <FaTimesCircle size={15} color="#ef4444" style={{ flexShrink: 0 }} />
-                <span className="whyus-problem-text" style={{ fontSize: "14px", color: "var(--text-body)" }}>{item}</span>
-              </div>
-            ))}
+            
+            {/* 2x2 Grid of Problems */}
+            <div className="whyus-problems-container">
+              {problems.map((item) => (
+                <div key={item} className="whyus-problem-item">
+                  <FaTimesCircle size={16} color="#ffa3a3" style={{ marginTop: "2px", flexShrink: 0 }} />
+                  <span className="whyus-problem-text">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right */}
-          <div className="reveal-right">
-            <div
-              className="whyus-benefit-card"
-              style={{
-                background: "var(--bg-light)",
-                border: "1px solid var(--border)",
-                borderRadius: "20px",
-                padding: "32px",
-              }}
-            >
-              <h3 className="whyus-benefit-title" style={{ fontSize: "18px", fontWeight: 700, color: "var(--text-dark)", marginBottom: "20px" }}>
-                Dengan CanDigital, bisnis Anda:
+          {/* Right Column */}
+          <div className="whyus-right-col">
+            <div className="whyus-benefit-card">
+              <span className="whyus-card-badge">Solusi Digital</span>
+              <h3 className="whyus-benefit-title">
+                Dengan CanDigit, bisnis Anda:
               </h3>
               {benefits.map(({ Icon, text, color }) => (
-                <div
-                  key={text}
-                  className="whyus-benefit-item"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    padding: "12px 16px",
-                    background: "#fff",
-                    border: "1px solid var(--border)",
-                    borderRadius: "10px",
-                    marginBottom: "10px",
-                    boxShadow: "var(--shadow-sm)",
-                  }}
-                >
+                <div key={text} className="whyus-benefit-item">
                   <div
                     className="whyus-benefit-icon"
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: "10px",
                       background: color + "15",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
                     }}
                   >
-                    <Icon size={16} color={color} />
+                    <Icon size={18} color={color} />
                   </div>
-                  <span className="whyus-benefit-text" style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-dark)", flex: 1 }}>{text}</span>
-                  <FaCheckCircle size={15} color="#22c55e" style={{ flexShrink: 0 }} />
+                  <span className="whyus-benefit-text">{text}</span>
+                  <FaCheckCircle size={16} color="#22c55e" className="whyus-check-icon" />
                 </div>
               ))}
             </div>
@@ -129,27 +91,7 @@ export function WhyUsSection() {
   );
 }
 
-
 export function StatsSection() {
-  return (
-    <section style={{ background: "var(--bg-light)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "52px 0" }}>
-      <div className="container">
-        <div className="stats-grid">
-          {statsData.map(({ Icon, num, label, color }, i) => (
-            <div key={label} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div className="stat-icon-wrap" style={{ background: color + "15", borderColor: color + "25" }}>
-                <Icon color={color} className="stat-icon" />
-              </div>
-              <div className="stat-num">{num}</div>
-              <div className="stat-label">
-                {label.split("\n").map((text, idx) => (
-                  <span key={idx} className="stat-label-line">{text}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
+
