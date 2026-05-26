@@ -431,41 +431,292 @@ section {
 /* =====================
    TESTIMONIALS
 ===================== */
-.testimonial-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-  width: 320px;
-}
 
-/* =====================
-   MARQUEE
-===================== */
-.marquee-wrap {
+/* Section wrapper */
+.testi-section {
+  background: #ffffff;
+  position: relative;
   overflow: hidden;
+  padding: 88px 0;
 }
 
-.marquee-track {
+/* Dot-grid decoration */
+.testi-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(47, 160, 132, 0.06) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient glow orbs */
+.testi-bg-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testi-bg-glow--left {
+  top: -80px;
+  left: -60px;
+  background: radial-gradient(circle, rgba(67, 240, 205, 0.09) 0%, transparent 70%);
+}
+
+.testi-bg-glow--right {
+  bottom: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(47, 160, 132, 0.09) 0%, transparent 70%);
+}
+
+/* Header wrapper */
+.testi-header-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section header entrance */
+.testi-section-header {
+  animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Section label pill */
+.testi-label {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(47, 160, 132, 0.08);
+  border: 1px solid rgba(47, 160, 132, 0.2);
+  padding: 6px 18px;
+  border-radius: 50px;
+  color: #2FA084;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+/* Brand span color */
+.testi-brand {
+  color: #2FA084;
+}
+
+/* ─── Marquee ─── */
+
+.testi-marquee-outer {
+  overflow: hidden;
+  padding: 8px 0;
+  position: relative;
+  z-index: 1;
+  /* Edge fade via mask-image */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.testi-marquee-inner {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 38s linear infinite;
 }
 
-.marquee-track:hover {
+.testi-marquee-inner:hover {
   animation-play-state: paused;
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Individual Card ─── */
+
+.testi-card {
+  background: #ffffff;
+  border: 1px solid rgba(47, 160, 132, 0.10);
+  border-radius: 20px;
+  padding: 24px 22px 20px;
+  box-shadow: 0 4px 20px rgba(0, 66, 88, 0.05);
+  flex-shrink: 0;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar — appears on hover */
+.testi-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #2FA084, #43F0CD);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(47, 160, 132, 0.20);
+  box-shadow:
+    0 16px 40px rgba(0, 66, 88, 0.09),
+    0 4px 16px rgba(47, 160, 132, 0.12);
+}
+
+.testi-card:hover::before {
+  opacity: 1;
+}
+
+/* Quote icon */
+.testi-quote-icon {
+  color: #2FA084;
+  opacity: 0.22;
+  line-height: 1;
+}
+
+/* Stars */
+.testi-stars {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+/* Review body */
+.testi-text {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.72;
+  margin: 0;
+  flex: 1;
+}
+
+/* Author row */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 66, 88, 0.08);
+  margin-top: auto;
+}
+
+/* Gradient avatar */
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #fff;
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.testi-card:hover .testi-avatar {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.testi-name {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.testi-role {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.testi-company {
+  color: #2FA084;
+  font-weight: 700;
+}
+
+/* ─── Trust Badges ─── */
+
+.testi-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 52px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 160, 132, 0.12);
+  border-radius: 20px;
+  padding: 28px 40px;
+  box-shadow: 0 6px 24px rgba(0, 66, 88, 0.06);
+  position: relative;
+  z-index: 1;
+  animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.testi-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  text-align: center;
+}
+
+.testi-trust-num {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: #2FA084;
+  line-height: 1;
+}
+
+.testi-trust-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.testi-trust-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(47, 160, 132, 0.15);
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .testi-trust-row {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 20px;
   }
 
-  to {
-    transform: translateX(-50%);
+  .testi-trust-divider {
+    display: none;
+  }
+
+  .testi-trust-item {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 110px;
   }
 }
 
@@ -783,7 +1034,8 @@ section {
   color: #2FA084;
 }
 
-#portfolio .section-title span {
+#portfolio .section-title span,
+#testimonials .section-title span {
   color: #2FA084;
 }
 
