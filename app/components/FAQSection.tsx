@@ -4,7 +4,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import faqs from "../../data/faq.json";
 
 export default function FAQSection() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section
