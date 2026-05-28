@@ -247,9 +247,6 @@ export default function Footer() {
           <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", margin: 0 }}>
             © {year} CanDigit. All rights reserved.
           </p>
-          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", margin: 0 }}>
-            Dibuat dengan ❤️ untuk bisnis Indonesia
-          </p>
         </div>
       </div>
 
