@@ -10,6 +10,7 @@ import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import PolicyToast from "./components/PolicyToast";
 import { WhyUsSection, StatsSection } from "./components/WhyUsSection";
 
 export default function Home() {
@@ -63,6 +64,7 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
+      <PolicyToast />
 
       {/* WhatsApp float button */}
       <a
