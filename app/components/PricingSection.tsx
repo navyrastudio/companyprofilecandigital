@@ -80,6 +80,7 @@ export default function PricingSection() {
                   : "#ffffff",
                 border: p.featured ? "none" : "1px solid rgba(47,160,132,0.12)",
                 borderRadius: "24px",
+                overflow: p.featured ? "visible" : "hidden",
                 padding: "40px 32px",
                 position: "relative",
                 display: "flex",
@@ -130,7 +131,7 @@ export default function PricingSection() {
                   boxShadow: "0 6px 16px rgba(47,160,132,0.40)",
                   letterSpacing: "0.07em",
                 }}>
-                  ✦ PILIHAN TERBAIK
+                  ✦ PILIHAN POPULER
                 </div>
               )}
 
@@ -142,24 +143,25 @@ export default function PricingSection() {
                     <h3 style={{ fontSize: "22px", fontWeight: 800, color: p.featured ? "#fff" : "var(--text-dark)", lineHeight: 1.2, flex: 1 }}>
                       {p.name}
                     </h3>
-                    <div style={{
-                      fontSize: "10px",
-                      color: p.featured ? "#2FA084" : "#2FA084",
-                      background: p.featured ? "#ffffff" : "rgba(47,160,132,0.08)",
-                      border: p.featured ? "none" : "1px solid rgba(47,160,132,0.2)",
-                      padding: "5px 12px",
-                      borderRadius: "50px",
-                      fontWeight: 800,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      whiteSpace: "nowrap",
-                      flexShrink: 0,
-                    }}>
-                      {p.tagline === "PALING PRAKTIS" && "⚡ "}
-                      {p.tagline === "PALING POPULER" && "🔥 "}
-                      {p.tagline === "PALING LENGKAP" && "💎 "}
-                      {p.tagline}
-                    </div>
+                    {p.tagline !== "PALING POPULER" && (
+                      <div style={{
+                        fontSize: "10px",
+                        color: p.featured ? "#2FA084" : "#2FA084",
+                        background: p.featured ? "#ffffff" : "rgba(47,160,132,0.08)",
+                        border: p.featured ? "none" : "1px solid rgba(47,160,132,0.2)",
+                        padding: "5px 12px",
+                        borderRadius: "50px",
+                        fontWeight: 800,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        whiteSpace: "nowrap",
+                        flexShrink: 0,
+                      }}>
+                        {p.tagline === "PALING PRAKTIS" && "⚡ "}
+                        {p.tagline === "PALING LENGKAP" && "💎 "}
+                        {p.tagline}
+                      </div>
+                    )}
                   </div>
                   <div style={{ fontSize: "14px", color: p.featured ? "rgba(255,255,255,0.80)" : "var(--text-muted)", lineHeight: 1.6 }}>
                     {p.subtitle}
