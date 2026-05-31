@@ -2,8 +2,8 @@
   {
     "name": "Landing Page",
     "tagline": "PALING PRAKTIS",
-    "price": "600",
-    "suffix": "rb",
+    "price": "600.000",
+    "suffix": "",
     "subtitle": "Solusi cepat untuk promosi produk atau jasa tunggal.",
     "features": [
       "1 Halaman Desain Modern",
@@ -22,8 +22,8 @@
   {
     "name": "Company Profile",
     "tagline": "PALING POPULER",
-    "price": "2.5",
-    "suffix": "jt",
+    "price": "1.299.000",
+    "suffix": "",
     "subtitle": "Branding profesional untuk perusahaan & instansi.",
     "features": [
       "Max 7 Halaman Custom",
@@ -42,8 +42,8 @@
   {
     "name": "Sistem Toko Online",
     "tagline": "PALING LENGKAP",
-    "price": "4.5",
-    "suffix": "jt",
+    "price": "4.500.000",
+    "suffix": "",
     "subtitle": "Platform jualan online dengan manajemen mandiri.",
     "features": [
       "Katalog Produk & Keranjang",
