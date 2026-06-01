@@ -13,6 +13,7 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10);
@@ -30,6 +31,80 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  // Active section observer on scroll (Scrollspy)
+  useEffect(() => {
+    const handleScrollActive = () => {
+      const scrollPosition = window.scrollY + 120; // offset for detection
+      const sections = ["hero", "portfolio", "process", "pricing", "faq"];
+      
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener("scroll", handleScrollActive);
+    handleScrollActive(); // Run once initially
+    return () => window.removeEventListener("scroll", handleScrollActive);
+  }, []);
+
+  // Custom smooth scroll handler with offset for sticky navbar
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isMobile: boolean = false) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+
+    // For hero/top section, scroll exactly to the very top of the page (0 offset)
+    if (targetId === "hero") {
+      if (isMobile) {
+        setMobileOpen(false);
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }, 350);
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+      return;
+    }
+
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 10; // Snug offset (10px) to overlap section padding and keep content close to navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      
+      if (isMobile) {
+        setMobileOpen(false);
+        // Wait for the slide-out menu animation (350ms) to complete for an ultra-smooth experience
+        setTimeout(() => {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 350);
+      } else {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
   return (
     <>
       {/* ── Navbar bar ── */}
@@ -39,7 +114,7 @@ export default function Navbar() {
       >
         <div className="nav-inner">
           {/* Logo */}
-          <a href="#hero" className="nav-logo">
+          <a href="#hero" onClick={(e) => handleScroll(e, "#hero", false)} className="nav-logo">
             <img
               src={
                 scrolled && !mobileOpen
@@ -53,11 +128,19 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="nav-links">
-            {navLinks.map((l) => (
-              <a key={l.label} href={l.href} className="nav-link">
-                {l.label}
-              </a>
-            ))}
+            {navLinks.map((l) => {
+              const isActive = activeSection === l.href.replace("#", "");
+              return (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  onClick={(e) => handleScroll(e, l.href, false)}
+                  className={`nav-link ${isActive ? "active" : ""}`}
+                >
+                  {l.label}
+                </a>
+              );
+            })}
             <a
               href="https://wa.me/6281234567890?text=Halo%20CanDigit%2C%20saya%20ingin%20konsultasi"
               target="_blank"
@@ -220,40 +303,45 @@ export default function Navbar() {
             zIndex: 1,
           }}
         >
-          {navLinks.map((l, i) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                color: "rgba(255,255,255,0.92)",
-                textDecoration: "none",
-                fontSize: "26px",
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-                width: "100%",
-                textAlign: "center",
-                padding: "13px 0",
-                borderBottom:
-                  i < navLinks.length - 1
-                    ? "1px solid rgba(255,255,255,0.08)"
-                    : "none",
-                transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
-                opacity: mobileOpen ? 1 : 0,
-                transition:
-                  "transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s cubic-bezier(0.16,1,0.3,1), color 0.2s ease",
-                transitionDelay: mobileOpen ? `${0.08 + i * 0.07}s` : "0s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#43F0CD")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.92)")
-              }
-            >
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l, i) => {
+            const isActive = activeSection === l.href.replace("#", "");
+            return (
+              <a
+                key={l.label}
+                href={l.href}
+                onClick={(e) => handleScroll(e, l.href, true)}
+                style={{
+                  color: isActive ? "#43F0CD" : "rgba(255,255,255,0.92)",
+                  textDecoration: "none",
+                  fontSize: "26px",
+                  fontWeight: isActive ? 800 : 700,
+                  letterSpacing: "-0.02em",
+                  width: "100%",
+                  textAlign: "center",
+                  padding: "13px 0",
+                  borderBottom:
+                    i < navLinks.length - 1
+                      ? "1px solid rgba(255,255,255,0.08)"
+                      : "none",
+                  transform: mobileOpen ? "translateY(0)" : "translateY(20px)",
+                  opacity: mobileOpen ? 1 : 0,
+                  transition:
+                    "transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s cubic-bezier(0.16,1,0.3,1), color 0.2s ease",
+                  transitionDelay: mobileOpen ? `${0.08 + i * 0.07}s` : "0s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "#43F0CD")
+                }
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.color = "rgba(255,255,255,0.92)";
+                  }
+                }}
+              >
+                {l.label}
+              </a>
+            );
+          })}
 
           {/* CTA Button */}
           <a
