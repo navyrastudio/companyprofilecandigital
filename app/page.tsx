@@ -21,7 +21,9 @@ export default function Home() {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
-            io.unobserve(e.target);
+          } else {
+            // Remove 'visible' when leaving the viewport so the animation triggers again on next scroll
+            e.target.classList.remove("visible");
           }
         });
       },
@@ -36,9 +38,7 @@ export default function Home() {
 
     // Re-observe when new elements are added to the DOM (e.g. portfolio filter)
     const mo = new MutationObserver(() => {
-      document.querySelectorAll(`${SELECTOR}:not(.visible)`).forEach((el) =>
-        io.observe(el)
-      );
+      document.querySelectorAll(SELECTOR).forEach((el) => io.observe(el));
     });
     mo.observe(document.body, { childList: true, subtree: true });
 
