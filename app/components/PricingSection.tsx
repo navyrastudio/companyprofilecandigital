@@ -32,7 +32,7 @@ export default function PricingSection() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
 
         {/* ── Section Header ── */}
-        <div className="section-header pricing-section-header">
+        <div className="section-header pricing-section-header reveal">
           <div
             className="section-label"
             style={{
@@ -72,7 +72,7 @@ export default function PricingSection() {
           {plans.map((p, i) => (
             <div
               key={p.name}
-              className="pricing-card-wrap"
+              className={`pricing-card-wrap reveal-scale reveal-d${i + 1}`}
               style={{
                 animationDelay: `${i * 0.1}s`,
                 background: p.featured
@@ -383,9 +383,6 @@ export default function PricingSection() {
       </div>
 
       <style>{`
-        .pricing-section-header {
-          animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
         .custom-banner {
           display: flex;
           flex-wrap: wrap;

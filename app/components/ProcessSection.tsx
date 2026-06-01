@@ -83,7 +83,7 @@ export default function ProcessSection() {
 
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Section Header */}
-        <div className="section-header process-section-header">
+        <div className="section-header process-section-header reveal">
           <div
             className="section-label"
             style={{
@@ -125,7 +125,7 @@ export default function ProcessSection() {
             return (
               <div
                 key={step.num}
-                className="process-card"
+                className={`process-card reveal-scale reveal-d${(i % 3) + 1}`}
                 style={{
                   animationDelay: `${i * 0.09}s`,
                   ["--process-shadow" as string]: accent.shadow,
@@ -166,7 +166,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="process-cta">
+        <div className="process-cta reveal reveal-d2">
           <p className="process-cta-text">
             Siap memulai perjalanan digital Anda?
           </p>

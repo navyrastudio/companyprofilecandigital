@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
 
       {/* ── Section Header ── */}
       <div className="container testi-header-wrap">
-        <div className="section-header testi-section-header">
+        <div className="section-header testi-section-header reveal">
           <div className="testi-label">Testimoni</div>
           <h2 className="section-title">
             Kata Mereka tentang <span className="testi-brand">CanDigit</span>
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* ── Marquee Row 1 (→) ── */}
-      <div className="testi-marquee-outer" style={{ marginBottom: "20px" }}>
+      <div className="testi-marquee-outer reveal reveal-d1" style={{ marginBottom: "20px" }}>
         <div className="testi-marquee-inner">
           {[...testimonials, ...testimonials].map((t, i) =>
             renderCard(t, i)
@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* ── Marquee Row 2 (←) ── */}
-      <div className="testi-marquee-outer">
+      <div className="testi-marquee-outer reveal reveal-d2">
         <div
           className="testi-marquee-inner"
           style={{ animationDirection: "reverse" }}

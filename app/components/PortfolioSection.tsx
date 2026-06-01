@@ -264,7 +264,7 @@ export default function PortfolioSection() {
       />
 
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
-        <div className="section-header portfolio-section-header">
+        <div className="section-header portfolio-section-header reveal">
           <div className="section-label">Showcase</div>
           <h2 className="section-title">
             Karya Terbaik <span>Kami</span>
@@ -275,7 +275,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* Category Filters */}
-        <div className="portfolio-filters portfolio-section-filters">
+        <div className="portfolio-filters portfolio-section-filters reveal reveal-d1">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -299,7 +299,7 @@ export default function PortfolioSection() {
           {filteredPortfolios.map((p, i) => (
             <div
               key={p.name}
-              className="portfolio-card portfolio-fade"
+              className={`portfolio-card portfolio-fade reveal-scale reveal-d${(i % 3) + 1}`}
               style={{ 
                 animationDelay: `${i * 0.08}s`,
                 cursor: "pointer",
@@ -339,7 +339,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* View All CTA */}
-        <div style={{ textAlign: "center", marginTop: "48px" }} className="portfolio-section-cta">
+        <div style={{ textAlign: "center", marginTop: "48px" }} className="portfolio-section-cta reveal reveal-d2">
           <a 
             href="#contact" 
             className="btn hero-btn" 

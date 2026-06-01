@@ -38,7 +38,7 @@ export default function CTASection() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Glassmorphic CTA Card */}
         <div
-          className="cta-glass-card"
+          className="cta-glass-card reveal-scale"
           style={{
             background: "rgba(255, 255, 255, 0.7)",
             backdropFilter: "blur(20px)",
@@ -168,8 +168,8 @@ export default function CTASection() {
               flexWrap: "wrap",
             }}
           >
-            {trustItems.map(({ Icon, label }) => (
-              <div key={label} className="cta-trust-card">
+            {trustItems.map(({ Icon, label }, idx) => (
+              <div key={label} className={`cta-trust-card reveal reveal-d${idx + 1}`}>
                 <div
                   className="cta-trust-icon-wrap"
                   style={{
@@ -195,9 +195,6 @@ export default function CTASection() {
       </div>
 
       <style>{`
-        .cta-glass-card {
-          animation: portfolioSlideDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
         .cta-btn-primary {
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }

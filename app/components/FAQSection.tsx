@@ -34,7 +34,7 @@ export default function FAQSection() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
 
         {/* Section Header */}
-        <div className="section-header faq-section-header">
+        <div className="section-header faq-section-header reveal">
           <div
             className="section-label"
             style={{
@@ -76,6 +76,7 @@ export default function FAQSection() {
             return (
               <div
                 key={i}
+                className={`reveal reveal-d${Math.min((i % 2) + 1, 5)}`}
                 style={{
                   border: `1px solid ${isOpen ? "rgba(47,160,132,0.30)" : "rgba(47,160,132,0.10)"}`,
                   borderRadius: "16px",
@@ -180,9 +181,6 @@ export default function FAQSection() {
       </div>
 
       <style>{`
-        .faq-section-header {
-          animation: portfolioSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
         .faq-grid {
           grid-template-columns: repeat(2, 1fr);
         }

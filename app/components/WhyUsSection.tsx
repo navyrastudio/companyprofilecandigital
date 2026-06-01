@@ -39,13 +39,13 @@ export function WhyUsSection() {
       <div className="container">
         <div className="two-col why-us-grid">
           {/* Left Column */}
-          <div className="whyus-left-col">
-            <div className="section-label">Mengapa Website Penting?</div>
-            <h2 className="section-title whyus-title" style={{ textAlign: "left" }}>
+          <div className="whyus-left-col reveal-left">
+            <div className="section-label reveal reveal-d1">Mengapa Website Penting?</div>
+            <h2 className="section-title whyus-title reveal reveal-d2" style={{ textAlign: "left" }}>
               Bisnis Tanpa Website<br />
               <span>Kehilangan Peluang Besar</span>
             </h2>
-            <p className="whyus-desc">
+            <p className="whyus-desc reveal reveal-d3">
               Di era digital, orang rata-rata menghabiskan{" "}
               <strong>7+ jam per hari</strong> di internet.
               Website adalah kantor digital bisnis Anda — tempat pertama pelanggan potensial mencari informasi.
@@ -63,7 +63,7 @@ export function WhyUsSection() {
           </div>
 
           {/* Right Column */}
-          <div className="whyus-right-col">
+          <div className="whyus-right-col reveal-right">
             <div className="whyus-benefit-card">
               <span className="whyus-card-badge">Solusi Digital</span>
               <h3 className="whyus-benefit-title">

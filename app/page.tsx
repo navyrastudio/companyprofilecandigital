@@ -14,29 +14,41 @@ import { WhyUsSection, StatsSection } from "./components/WhyUsSection";
 
 export default function Home() {
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const SELECTOR = ".reveal, .reveal-left, .reveal-right, .reveal-scale";
+
+    const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
-            observer.unobserve(e.target); // Stop observing once visible
+            io.unobserve(e.target);
           }
         });
       },
       { threshold: 0, rootMargin: "0px 0px -50px 0px" }
     );
 
-    const timeout = setTimeout(() => {
-      document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) =>
-        observer.observe(el)
+    // Observe all current reveal elements
+    const observe = () =>
+      document.querySelectorAll(SELECTOR).forEach((el) => io.observe(el));
+
+    const timeout = setTimeout(observe, 100);
+
+    // Re-observe when new elements are added to the DOM (e.g. portfolio filter)
+    const mo = new MutationObserver(() => {
+      document.querySelectorAll(`${SELECTOR}:not(.visible)`).forEach((el) =>
+        io.observe(el)
       );
-    }, 100);
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       clearTimeout(timeout);
-      observer.disconnect();
+      io.disconnect();
+      mo.disconnect();
     };
   }, []);
+
 
   return (
     <>
