@@ -14,7 +14,7 @@ interface PortfolioItem {
 
 const portfolios = portfoliosData as PortfolioItem[];
 
-const filters = ["Semua", "Landing Page", "Company Profile", "Sistem Toko Online"];
+const filters = ["Semua", "Landing Page", "Company Profile", "Sistem Informasi"];
 
 export default function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("Semua");
@@ -100,7 +100,7 @@ export default function PortfolioSection() {
       );
     }
 
-    // 2. Desktop Browser Devices for Company Profile and Sistem Toko Online
+    // 2. Desktop Browser Devices for Company Profile and Sistem Informasi
     return (
       <div className="portfolio-device-mockup">
         <div className="mockup-browser">
@@ -113,7 +113,7 @@ export default function PortfolioSection() {
             <div className="browser-address" />
           </div>
           <div className="browser-screen">
-            {p.type === "Sistem Toko Online" ? (
+            {p.type === "Sistem Informasi" ? (
               p.name === "Toko Fashion Kita" ? (
                 // Toko Fashion Kita Store
                 <div style={{ display: "flex", flexDirection: "column", gap: "6px", height: "100%" }}>

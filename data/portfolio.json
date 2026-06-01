@@ -9,7 +9,7 @@
   },
   {
     "name": "Toko Fashion Kita",
-    "type": "Sistem Toko Online",
+    "type": "Sistem Informasi",
     "industry": "Fashion & Retail",
     "color": "#8b5cf6",
     "description": "Platform e-commerce modern yang menampilkan katalog interaktif, checkout instan, dan integrasi payment gateway.",
@@ -33,7 +33,7 @@
   },
   {
     "name": "RoboTech Indonesia",
-    "type": "Sistem Toko Online",
+    "type": "Sistem Informasi",
     "industry": "Teknologi & IoT",
     "color": "#3b82f6",
     "description": "Dashboard analitik real-time berbasis web untuk pemantauan performa sensor IoT di lini produksi pabrik.",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Edu Pintar Online",
-    "type": "Sistem Toko Online",
+    "type": "Sistem Informasi",
     "industry": "Pendidikan & Kursus",
     "color": "#ef4444",
     "description": "LMS (Learning Management System) interaktif untuk penjualan, streaming, dan pendaftaran kursus online bersertifikat.",
