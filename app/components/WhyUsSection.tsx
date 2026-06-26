@@ -1,90 +1,64 @@
-import {
-  FaChartLine,
-  FaBriefcase,
-  FaBullseye,
-  FaClock,
-  FaGlobe,
-  FaTimesCircle,
-  FaCheckCircle,
-} from "react-icons/fa";
-
-const problems = [
-  "Sulit ditemukan di Google",
-  "Terkesan tidak profesional",
-  "Kalah dari kompetitor",
-  "Kehilangan kepercayaan calon klien",
-];
-
-const benefits = [
-  { Icon: FaChartLine, text: "Mudah ditemukan di halaman 1 Google", color: "#004258" },
-  { Icon: FaBriefcase, text: "Tampil profesional dan terpercaya", color: "#3b82f6" },
-  { Icon: FaBullseye, text: "Menjangkau audiens yang tepat", color: "#10b981" },
-  { Icon: FaClock, text: "Website aktif 24 jam tanpa henti", color: "#f59e0b" },
-  { Icon: FaGlobe, text: "Jangkauan bisnis lebih luas", color: "#8b5cf6" },
-];
+import { ImageIcon } from "lucide-react";
 
 export function WhyUsSection() {
+  const items = [
+    { emoji: "📱", text: "Informasi dicari melalui Google", color: "rgba(59, 130, 246, 0.12)" },
+    { emoji: "🌐", text: "Website menjadi pusat informasi resmi", color: "rgba(16, 185, 129, 0.12)" },
+    { emoji: "⭐", text: "Kepercayaan dibangun dari kehadiran digital yang profesional", color: "rgba(245, 158, 11, 0.12)" },
+    { emoji: "⏱", text: "Kecepatan akses informasi memengaruhi keputusan masyarakat", color: "rgba(99, 102, 241, 0.12)" }
+  ];
+
   return (
-    <section className="whyus-section" style={{ marginBottom: "-40px" }}>
-      {/* Glowing Backdrop Orbs */}
-      <div className="whyus-orb-1"></div>
-      <div className="whyus-orb-2"></div>
+    <section 
+      id="why-us"
+      className="relative py-24 lg:py-32 overflow-hidden bg-slate-50" 
+    >
+      {/* Background Decor */}
+      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent"></div>
+      <div className="absolute top-40 right-0 w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-[100px]"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-emerald-500/5 blur-[100px]"></div>
 
-      {/* Decorative Interactive Shapes */}
-      <div className="whyus-shape whyus-shape-1"></div>
-      <div className="whyus-shape whyus-shape-2"></div>
-      <div className="whyus-shape whyus-shape-3"></div>
-      <div className="whyus-shape whyus-shape-4"></div>
+      <div className="container relative z-10 mx-auto px-4 max-w-7xl">
+        
+        {/* Header Section */}
+        <div className="w-full text-left mb-16 lg:mb-20 reveal">
+          <h2 className="section-title whitespace-normal lg:whitespace-nowrap">
+            Cara Masyarakat Mencari Informasi <span>Sudah Berubah</span>
+          </h2>
+        </div>
 
-      <div className="container">
-        <div className="two-col why-us-grid">
-          {/* Left Column */}
-          <div className="whyus-left-col reveal-left">
-            <div className="section-label reveal reveal-d1">Mengapa Website Penting?</div>
-            <h2 className="section-title whyus-title reveal reveal-d2" style={{ textAlign: "left" }}>
-              Bisnis Tanpa Website<br />
-              <span>Kehilangan Peluang Besar</span>
-            </h2>
-            <p className="whyus-desc reveal reveal-d3">
-              Di era digital, orang rata-rata menghabiskan{" "}
-              <strong>7+ jam per hari</strong> di internet.
-              Website adalah kantor digital bisnis Anda — tempat pertama pelanggan potensial mencari informasi.
+        {/* 2-Column Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* Left: Custom Styled Image Placeholder */}
+          <div className="relative w-full reveal-left">
+            <div className="why-image-wrapper shadow-xl">
+              <ImageIcon className="why-image-icon" />
+              <span className="why-image-text">Tempat untuk Gambar / Ilustrasi</span>
+            </div>
+          </div>
+
+          {/* Right: Custom Styled Cards */}
+          <div className="reveal-right">
+            <p className="text-[17px] text-[#4a5568] leading-[1.7] mb-8">
+              Sebelum memutuskan membeli produk, mendaftar sekolah, atau menggunakan layanan tertentu, kebanyakan orang akan mencari informasi terlebih dahulu melalui internet.
             </p>
-            
-            {/* 2x2 Grid of Problems */}
-            <div className="whyus-problems-container">
-              {problems.map((item) => (
-                <div key={item} className="whyus-problem-item">
-                  <FaTimesCircle size={16} color="#ffa3a3" style={{ marginTop: "2px", flexShrink: 0 }} />
-                  <span className="whyus-problem-text">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="whyus-right-col reveal-right">
-            <div className="whyus-benefit-card">
-              <span className="whyus-card-badge">Solusi Digital</span>
-              <h3 className="whyus-benefit-title">
-                Dengan CanDigit, bisnis Anda:
-              </h3>
-              {benefits.map(({ Icon, text, color }) => (
-                <div key={text} className="whyus-benefit-item">
-                  <div
-                    className="whyus-benefit-icon"
-                    style={{
-                      background: color + "15",
-                    }}
-                  >
-                    <Icon size={18} color={color} />
+            <div className="flex flex-col gap-3">
+              
+              {items.map((item, idx) => (
+                <div className="why-card group" key={idx}>
+                  <div className="why-icon-box" style={{ backgroundColor: item.color }}>
+                    {item.emoji}
                   </div>
-                  <span className="whyus-benefit-text">{text}</span>
-                  <FaCheckCircle size={16} color="#22c55e" className="whyus-check-icon" />
+                  <h3 className="why-title-text">
+                    {item.text}
+                  </h3>
                 </div>
               ))}
+
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -94,4 +68,3 @@ export function WhyUsSection() {
 export function StatsSection() {
   return null;
 }
-
