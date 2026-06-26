@@ -84,22 +84,7 @@ export default function ProcessSection() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Section Header */}
         <div className="section-header process-section-header reveal">
-          <div
-            className="section-label"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              background: "rgba(47, 160, 132, 0.08)",
-              border: "1px solid rgba(47, 160, 132, 0.2)",
-              padding: "6px 18px",
-              borderRadius: "50px",
-              color: "#2FA084",
-              fontSize: "12px",
-              fontWeight: 800,
-              letterSpacing: "0.08em",
-              marginBottom: "18px",
-            }}
-          >
+          <div className="testi-label">
             Cara Kerja
           </div>
           <h2

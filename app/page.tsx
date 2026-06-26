@@ -11,6 +11,9 @@ import FAQSection from "./components/FAQSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import { WhyUsSection, StatsSection } from "./components/WhyUsSection";
+import ProblemSection from "./components/ProblemSection";
+
+
 
 export default function Home() {
   useEffect(() => {
@@ -66,6 +69,7 @@ export default function Home() {
         ></div>
 
         <WhyUsSection />
+        <ProblemSection />
         <StatsSection />
         <PortfolioSection />
         <ProcessSection />
