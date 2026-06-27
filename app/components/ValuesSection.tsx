@@ -62,8 +62,9 @@ export default function ValuesSection() {
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden border-t border-slate-100">
       
       {/* Background Decorative Elements */}
-      <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(47,160,132,0.05) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: 'radial-gradient(circle, rgba(67,240,205,0.05) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+      <div className="testi-bg-dots"></div>
+      <div className="testi-bg-glow testi-bg-glow--left"></div>
+      <div className="testi-bg-glow testi-bg-glow--right"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10" style={{ maxWidth: '1280px', margin: '0 auto' }}>
         
