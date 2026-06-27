@@ -141,9 +141,9 @@ export default function ProcessSection() {
         {/* Mobile Vertical Timeline (Hidden on Desktop) */}
         <div className="block lg:hidden relative w-full px-4">
           {/* Vertical Line */}
-          <div className="absolute top-0 bottom-0 border-l-2 border-dashed border-slate-200" style={{ left: '27px' }}></div>
+          <div className="absolute top-0 bottom-0 border-l-2 border-dashed border-slate-200" style={{ left: '24px' }}></div>
           
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {steps.map((step, i) => {
               const isHovered = hoveredStep === i;
               
@@ -153,6 +153,7 @@ export default function ProcessSection() {
                 boxShadow: isHovered ? '0 20px 40px -10px rgba(47,160,132,0.2)' : '0 10px 30px -10px rgba(47,160,132,0.08)',
                 transform: isHovered ? 'translateX(6px)' : 'translateX(0)',
                 transition: 'all 0.3s ease',
+                padding: '24px 20px 24px 28px',
               };
 
               const titleColor = isHovered ? '#2FA084' : '#1e293b';
@@ -163,25 +164,25 @@ export default function ProcessSection() {
               return (
               <div 
                 key={i} 
-                className="relative flex items-center gap-6 cursor-pointer"
+                className="relative flex items-start gap-5 cursor-pointer"
                 onMouseEnter={() => setHoveredStep(i)}
                 onMouseLeave={() => setHoveredStep(null)}
               >
                 {/* Dot */}
-                <div className="relative z-10 flex-shrink-0 rounded-full shadow-sm" style={{ width: '22px', height: '22px', marginLeft: '-3px', backgroundColor: dotBg, border: `5px solid ${dotBorder}`, transition: 'all 0.3s ease' }}></div>
+                <div className="relative z-10 flex-shrink-0 rounded-full shadow-sm" style={{ width: '22px', height: '22px', marginLeft: '-3px', marginTop: '28px', backgroundColor: dotBg, border: `5px solid ${dotBorder}`, transition: 'all 0.3s ease' }}></div>
                 
                 {/* Box */}
-                <div className="flex-1 p-5 rounded-2xl flex flex-col justify-center relative overflow-hidden" style={mBoxStyle}>
+                <div className="flex-1 rounded-2xl flex flex-col justify-center relative overflow-hidden" style={mBoxStyle}>
                   {/* Accent Left Bar */}
                   <div className="absolute top-0 left-0 w-[4px] h-full" style={{ background: 'linear-gradient(to bottom, #2FA084, #43F0CD)' }}></div>
                   
                   {/* Corner Number */}
-                  <span className="font-black absolute top-3 right-4 z-0" style={{ fontSize: '24px', color: cornerNumColor, transition: 'color 0.3s ease', lineHeight: 1 }}>
+                  <span className="font-black absolute top-5 right-5 z-0" style={{ fontSize: '28px', color: cornerNumColor, transition: 'color 0.3s ease', lineHeight: 1 }}>
                     0{i+1}
                   </span>
 
-                  <h4 className="font-bold text-[15px] leading-tight mb-2 relative z-10" style={{ color: titleColor, transition: 'color 0.3s ease' }}>{step.title}</h4>
-                  <p className="text-[13px] text-slate-500 leading-relaxed relative z-10">{step.desc}</p>
+                  <h4 className="font-bold text-[16px] leading-[1.4] mb-3 relative z-10" style={{ color: titleColor, transition: 'color 0.3s ease', paddingRight: '40px' }}>{step.title}</h4>
+                  <p className="text-[14px] text-slate-500 leading-[1.7] relative z-10" style={{ paddingRight: '8px' }}>{step.desc}</p>
                 </div>
               </div>
             )})}
