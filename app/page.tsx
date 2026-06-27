@@ -9,6 +9,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
 import CTASection from "./components/CTASection";
+import ValuesSection from "./components/ValuesSection";
 import Footer from "./components/Footer";
 import { WhyUsSection, StatsSection } from "./components/WhyUsSection";
 import ProblemSection from "./components/ProblemSection";
@@ -78,6 +79,7 @@ export default function Home() {
         <PricingSection />
         <FAQSection />
         <CTASection />
+        <ValuesSection />
       </main>
       <Footer />
 

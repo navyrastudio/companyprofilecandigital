@@ -82,7 +82,7 @@ export default function CTASection() {
               letterSpacing: "-0.01em",
             }}
           >
-            Siap Wujudkan Website<br />
+            Mari Wujudkan<br />
             <span style={{
               background: "linear-gradient(to right, #2FA084 0%, #43F0CD 100%)",
               WebkitBackgroundClip: "text",
@@ -90,7 +90,7 @@ export default function CTASection() {
               WebkitTextFillColor: "transparent",
               color: "transparent",
               display: "inline-block"
-            }}>Impian Anda?</span>
+            }}>Keinginan Anda</span>
           </h2>
 
           <p
@@ -102,8 +102,7 @@ export default function CTASection() {
               lineHeight: 1.8,
             }}
           >
-            Konsultasikan kebutuhan Anda sekarang — gratis, tanpa komitmen.
-            Tim kami siap membantu mendapatkan website yang tepat sesuai budget bisnis Anda.
+            Ceritakan tantangan yang sedang Anda hadapi, dan kami akan membantu menemukan solusi digital yang paling sesuai.
           </p>
 
           {/* Action buttons */}
