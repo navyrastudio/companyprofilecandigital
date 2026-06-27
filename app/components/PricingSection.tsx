@@ -52,10 +52,10 @@ export default function PricingSection() {
             Harga Paket
           </div>
           <h2 className="section-title" style={{ color: "var(--text-dark)", marginBottom: "14px" }}>
-            Investasi yang <span style={{ color: "#2FA084" }}>Sepadan</span>
+            Investasi yang <span style={{ color: "#2FA084" }}>Sepadan dengan Tujuan Anda</span>
           </h2>
           <p className="section-desc">
-            Harga transparan, kualitas premium. Pilih paket yang sesuai kebutuhan bisnis Anda.
+            Setiap organisasi memiliki kebutuhan yang berbeda. Pilih solusi yang sesuai dengan tahap perjalanan digital Anda saat ini.
           </p>
         </div>
 
