@@ -12,7 +12,7 @@ import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import { WhyUsSection, StatsSection } from "./components/WhyUsSection";
 import ProblemSection from "./components/ProblemSection";
-
+import JourneySection from "./components/JourneySection";
 
 
 export default function Home() {
@@ -70,6 +70,7 @@ export default function Home() {
 
         <WhyUsSection />
         <ProblemSection />
+        <JourneySection />
         <StatsSection />
         <PortfolioSection />
         <ProcessSection />
