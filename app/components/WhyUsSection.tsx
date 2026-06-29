@@ -12,8 +12,8 @@ export function WhyUsSection() {
   return (
     <section 
       id="why-us"
-      className="relative py-24 lg:py-32 overflow-hidden" 
-      style={{ backgroundColor: '#ffffff' }}
+      className="relative overflow-hidden" 
+      style={{ backgroundColor: '#ffffff', paddingTop: '70px', paddingBottom: '100px' }}
     >
       <div className="container relative z-10 mx-auto px-4 max-w-7xl">
         
@@ -30,7 +30,7 @@ export function WhyUsSection() {
 
         
         {/* Header Section */}
-        <div className="w-full text-left reveal" style={{ marginBottom: '20px' }}>
+        <div className="w-full text-center lg:text-left reveal" style={{ marginBottom: '40px' }}>
           <div className="testi-label">
             Transformasi Digital
           </div>
@@ -59,7 +59,7 @@ export function WhyUsSection() {
 
           {/* Right: Custom Styled Cards */}
           <div className="reveal-right">
-            <p className="text-[17px] text-slate-600 leading-[1.7]" style={{ marginBottom: '20px' }}>
+            <p className="text-[17px] text-slate-600 leading-[1.7] text-center lg:text-left" style={{ marginBottom: '20px' }}>
               Sebelum memutuskan membeli produk, mendaftar sekolah, atau menggunakan layanan tertentu, kebanyakan orang akan mencari informasi terlebih dahulu melalui internet.
             </p>
             <div className="flex flex-col gap-3">
