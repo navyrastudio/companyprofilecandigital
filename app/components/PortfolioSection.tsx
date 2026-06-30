@@ -16,16 +16,19 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 lg:py-28 bg-[#f8fafc] relative overflow-hidden">
+    <section id="portfolio" className="py-20 lg:py-28 bg-[#2FA084] relative overflow-hidden portfolio-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Header Layout */}
         <div style={{ marginBottom: '40px' }}>
-          <div className="max-w-xl reveal-left">
-            <h2 className="text-[26px] md:text-3xl lg:text-[34px] font-bold text-slate-800 leading-[1.35] tracking-tight mb-4">
-              Karya yang Menjadi Bagian dari <span className="text-[#2FA084]">Perjalanan Klien Kami</span>
+          <div className="max-w-xl reveal-left flex flex-col items-start">
+            <div style={{ backgroundColor: '#ff7a59', color: '#ffffff', padding: '6px 32px', borderRadius: '50px', fontSize: '13px', fontWeight: 800, letterSpacing: '0.1em', marginBottom: '20px', display: 'inline-block', boxShadow: '0 4px 15px rgba(255, 122, 89, 0.2)' }}>
+              PORTOFOLIO
+            </div>
+            <h2 className="text-[26px] md:text-3xl lg:text-[34px] font-bold leading-[1.35] tracking-tight mb-4" style={{ color: '#ffffff' }}>
+              Karya yang Menjadi Bagian dari <span>Perjalanan Klien Kami</span>
             </h2>
-            <p className="text-slate-500 text-[14px] md:text-[15px] leading-relaxed max-w-lg">
+            <p className="text-[14px] md:text-[15px] leading-relaxed max-w-lg" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
               Lihat bagaimana kami membantu berbagai organisasi dan bisnis <br className="hidden md:block" />
               menghadirkan solusi digital yang sesuai dengan kebutuhan mereka.
             </p>
@@ -117,17 +120,17 @@ export default function PortfolioSection() {
               className="inline-flex items-center gap-2 rounded-full text-white font-bold text-[14px] transition-all duration-300"
               style={{
                 padding: "12px 24px",
-                background: "linear-gradient(to right, #2FA084 0%, #43F0CD 100%)",
-                boxShadow: "0 10px 20px rgba(47,160,132,0.25)",
+                background: "linear-gradient(to right, #ff7a59 0%, #ff9478 100%)",
+                boxShadow: "0 10px 20px rgba(255, 122, 89, 0.25)",
                 border: "none",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow = "0 15px 30px rgba(47,160,132,0.35)";
+                e.currentTarget.style.boxShadow = "0 15px 30px rgba(255, 122, 89, 0.4)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 20px rgba(47,160,132,0.25)";
+                e.currentTarget.style.boxShadow = "0 10px 20px rgba(255, 122, 89, 0.25)";
               }}
             >
               More Project
