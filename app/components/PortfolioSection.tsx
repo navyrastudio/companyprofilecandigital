@@ -17,6 +17,19 @@ export default function PortfolioSection() {
 
   return (
     <section id="portfolio" className="py-20 lg:py-28 bg-[#2FA084] relative overflow-hidden portfolio-section">
+      
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1.2px, transparent 1.2px)', backgroundSize: '28px 28px' }}></div>
+      <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-white/10 blur-[80px]"></div>
+      <div className="absolute bottom-[-100px] right-[-100px] w-[400px] h-[400px] rounded-full bg-white/10 blur-[80px]"></div>
+      
+      {/* Floating Animated Ornaments */}
+      <div className="animate-[float_6s_ease-in-out_infinite]" style={{ position: "absolute", top: "15%", left: "8%", width: "60px", height: "60px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.15)", zIndex: 0 }} />
+      <div className="animate-[float_8s_ease-in-out_infinite_reverse]" style={{ position: "absolute", bottom: "25%", right: "8%", width: "25px", height: "25px", borderRadius: "50%", background: "#ff7a59", boxShadow: "0 8px 20px rgba(255,122,89,0.4)", opacity: 0.9, zIndex: 0 }} />
+      <div className="animate-[float_7s_ease-in-out_infinite]" style={{ position: "absolute", top: "45%", left: "15%", width: "40px", height: "40px", borderRadius: "12px", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(4px)", transform: "rotate(15deg)", zIndex: 0 }} />
+      <div className="animate-[float_9s_ease-in-out_infinite_reverse]" style={{ position: "absolute", top: "25%", right: "12%", width: "80px", height: "80px", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.1)", zIndex: 0 }} />
+      <div className="animate-[float_5s_ease-in-out_infinite]" style={{ position: "absolute", bottom: "10%", left: "35%", width: "20px", height: "20px", borderRadius: "4px", background: "rgba(255,255,255,0.2)", transform: "rotate(45deg)", zIndex: 0 }} />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Header Layout */}
