@@ -1850,6 +1850,22 @@ section {
   box-shadow: 0 4px 15px rgba(47, 160, 132, 0.04);
 }
 
+.journey-section .section-label {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(47, 160, 132, 0.06) !important;
+  border: 1px solid rgba(47, 160, 132, 0.25) !important;
+  padding: 6px 24px !important;
+  border-radius: 50px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #2FA084 !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 15px rgba(47, 160, 132, 0.04);
+}
+
 .whyus-title {
   font-size: clamp(34px, 4.5vw, 48px) !important;
   font-weight: 800 !important;
